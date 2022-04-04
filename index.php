@@ -1,1 +1,1 @@
-<?php echo "Hello World! Test pull.";
+<?php echo "Hello World! Test.";
