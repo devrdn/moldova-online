@@ -1,4 +1,3 @@
-<?php use config; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/normalize.css">
-   <title>Moldiva Culture</title>
+   <title>{Title}</title>
 </head>
 
 <body>
@@ -27,6 +26,6 @@
          </nav>
       </div>
       <div class="nav__login">
-            <span>Войти / Зарегистрироваться</span>
+         <span>Войти / Зарегистрироваться</span>
       </div>
    </div>
