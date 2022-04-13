@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$menu-color: white;
+$primary-color: #F3F4FF;
+$secondary-color: #3F3D56;
+$font:  'Roboto', sans-serif;
+
+body {
+   background-color: $primary-color;
+   font-family: $font;
+}
+
+.header {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 50px;
+   padding-right: 315px;
+   padding-left: 315px;
+   padding-top: 11.54px;
+   padding-bottom: 11.54px;
+   background-color: $menu-color;
+}
+.header__nav {
+   display: inline-flex;
+}
+
+.menu {
+   
+   ul {
+      display: inline-flex;
+      list-style-type: none;
+   }
+   .menu__item {
+      padding-left: 68px;
+   }
+}
+.nav__login {
+   background-color: $secondary-color;
+   padding: 7px 20px 7px 20px;
+   color: $menu-color;
+   border-radius: 21px;
+}
