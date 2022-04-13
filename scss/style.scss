@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 $menu-color: white;
-$primary-color: #F3F4FF;
-$secondary-color: #3F3D56;
-$font:  'Roboto', sans-serif;
+$primary-color: #f3f4ff;
+$secondary-color: #3f3d56;
+$font: "Roboto", sans-serif;
 
 body {
    background-color: $primary-color;
@@ -27,7 +27,6 @@ body {
 }
 
 .menu {
-   
    ul {
       display: inline-flex;
       list-style-type: none;
@@ -41,4 +40,125 @@ body {
    padding: 7px 20px 7px 20px;
    color: $menu-color;
    border-radius: 21px;
+}
+
+.container {
+   width: 1290px;
+   margin: 0 auto;
+   margin-top: 250px;
+   color: $secondary-color;
+   .hero {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 20px;
+      margin-right: 20px;
+      .title {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         .title__name {
+            color: #f3f4ff;
+            font-size: 40px;
+            text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56,
+               1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56,
+               -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56,
+               1px 1px 0 #3f3d56;
+            line-height: 0;
+         }
+         .subtitle__name {
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 2px;
+         }
+      }
+   }
+
+   .grid__info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 119px;
+      grid-row-gap: 32px;
+   }
+
+   .news {
+      grid-column-gap: 33px;
+   }
+
+   .info__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: $menu-color;
+      border-radius: 50px;
+      padding: 35px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 21px;
+
+      span {
+         margin-top: 36px;
+      }
+   }
+
+   .section {
+      margin-top: 200px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 40px;
+   }
+
+   .latets__news {
+      margin-top: 100px;
+   }
+   .section__title {
+      margin-bottom: 30px;
+   }
+
+   .post__image {
+      width: 387px;
+      height: 187px;
+      border-radius: 31px;
+      justify-content: center;
+   }
+
+   .box__news {
+      padding: 10px;
+      border-radius: 31px;
+   }
+
+   .post__info {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      .post__title {
+         text-align: left;
+         margin-top: 8px;
+      }
+      .post__content {
+         text-align: left;
+         margin-top: 5px;
+         font-style: normal;
+         font-weight: 400;
+         font-size: 14px;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: -moz-box;
+         -moz-box-orient: vertical;
+         display: -webkit-box;
+         -webkit-line-clamp: 3;
+         -webkit-box-orient: vertical;
+         line-clamp: 3;
+         box-orient: vertical;
+      }
+      .read-more {
+         text-align: left;
+         font-style: normal;
+         font-weight: 400;
+         font-size: 14px;
+         color: #1887DC;
+         margin-top: 5px;
+      }
+   }
 }

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 body {
-  background-color: #F3F4FF;
+  background-color: #f3f4ff;
   font-family: "Roboto", sans-serif;
 }
 
@@ -44,8 +44,164 @@ body {
 }
 
 .nav__login {
-  background-color: #3F3D56;
+  background-color: #3f3d56;
   padding: 7px 20px 7px 20px;
   color: white;
   border-radius: 21px;
+}
+
+.container {
+  width: 1290px;
+  margin: 0 auto;
+  margin-top: 250px;
+  color: #3f3d56;
+}
+
+.container .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container .hero .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .hero .title .title__name {
+  color: #f3f4ff;
+  font-size: 40px;
+  text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56, 1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56;
+  line-height: 0;
+}
+
+.container .hero .title .subtitle__name {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 2px;
+}
+
+.container .grid__info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 119px;
+  grid-row-gap: 32px;
+}
+
+.container .news {
+  grid-column-gap: 33px;
+}
+
+.container .info__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 50px;
+  padding: 35px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.container .info__box span {
+  margin-top: 36px;
+}
+
+.container .section {
+  margin-top: 200px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.container .latets__news {
+  margin-top: 100px;
+}
+
+.container .section__title {
+  margin-bottom: 30px;
+}
+
+.container .post__image {
+  width: 387px;
+  height: 187px;
+  border-radius: 31px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .box__news {
+  padding: 10px;
+  border-radius: 31px;
+}
+
+.container .post__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.container .post__info .post__title {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.container .post__info .post__content {
+  text-align: left;
+  margin-top: 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+}
+
+.container .post__info .read-more {
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1887DC;
+  margin-top: 5px;
 }

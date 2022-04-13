@@ -1,9 +1,7 @@
 <?php
 
-include_once __DIR__."/config.php";
-include_once __DIR__."/core/templater.php";
+require_once "config.php";
 
-$page = __DIR__."/template-parts/header.php";
-echo $CORE;
-$tpl = new templater(file_get_contents($page));
-echo $tpl->getTemplate()->value();
+require_once "template-parts/header.php";
+
+require_once "template-parts/main_page.php";
