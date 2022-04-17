@@ -30,7 +30,7 @@
                </nav>
             </div> 
             <div class="nav__login">
-               <span>Войти / Зарегистрироваться</span>
+               <span><a href="login.php">Войти / Зарегистрироваться</a></span>
             </div>
          </div>
       </div>

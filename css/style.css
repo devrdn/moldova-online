@@ -68,6 +68,10 @@ body {
   border-radius: 21px;
 }
 
+.nav__login a {
+  color: #fff;
+}
+
 .container {
   width: 1290px;
   margin: 0 auto;
