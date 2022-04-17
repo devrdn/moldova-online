@@ -16,34 +16,35 @@ $screen-xl-min: 1200px;
 }
 
 @mixin md {
-   @media  only screen  and (max-width: #{$screen-md-min}) {
+   @media only screen  and (max-width: #{$screen-md-min}) {
       @content;
    }
 }
 
 @mixin lg {
-   @media   only screen  and (max-width: #{$screen-lg-min}) {
+   @media only screen  and (max-width: #{$screen-lg-min}) {
       @content;
    }
 }
 
 @mixin xl {
-   @media   only screen  and (max-width: #{$screen-xl-min}) {
+   @media only screen  and (max-width: #{$screen-xl-min}) {
       @content;
    }
 }
 
 @mixin rwd($screen) {
    @media (max-width: $screen) {
-       @content;
+      @content;
    }
 }
-
 
 body {
    background-color: $primary-color;
    font-family: $font;
 }
+
+
 
 .header {
    display: flex;
@@ -57,7 +58,6 @@ body {
    padding-bottom: 11.54px;
    background-color: $menu-color;
 }
-
 
 .header__nav {
    display: inline-flex;
@@ -177,7 +177,6 @@ body {
    }
    .section__title {
       margin-bottom: 30px;
-      
    }
 
    .post__image {
@@ -221,31 +220,73 @@ body {
          font-style: normal;
          font-weight: 400;
          font-size: 14px;
-         color: #1887DC;
+         color: #1887dc;
          margin-top: 5px;
       }
    }
 }
 
-.personal__account{
+.footer-container {
+   padding: 54px;
+   margin-top: 54px;
+   background-color: $secondary-color;
+   min-width: 1272px;
+   .footer__info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .footer__menu {
+         display: flex;
+         align-items: center;
+         
+         li:not(:last-child) {
+            margin-bottom: 12px;
+         }
+         li {
+            list-style: none;
+         }
+         a {
+            color: white;
+         }
+      }
+
+      .social__icons {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 40px;
+         row-gap: 42px;
+         .fa {
+            background: #fff;
+            color: $secondary-color;
+            margin: 5px 2px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 30px;
+            padding: 4px;
+         }
+      }
+   }
+}
+
+.personal__account {
    display: flex;
 }
 
-.personal__data{
+.personal__data {
    display: flex;
-   background-color: #FFFFFF;
+   background-color: #ffffff;
    border-radius: 45px;
    margin-left: 30px;
    padding-left: 42px;
    padding-right: 292px;
 }
 
-.persdata__header{
+.persdata__header {
    margin-top: 37px;
    padding-bottom: 44px;
 }
 
-.persdata__name span{
+.persdata__name span {
    font-style: normal;
    font-weight: 600;
    font-size: 24px;
@@ -253,19 +294,19 @@ body {
    color: #000000;
 }
 
-.persdata__block{
+.persdata__block {
    display: grid;
-   grid-template-columns: repeat(2,1fr);
+   grid-template-columns: repeat(2, 1fr);
    justify-items: stretch;
    grid-column-gap: 110px;
 }
 
-.persdata__block label{
+.persdata__block label {
    font-style: normal;
    font-weight: 500;
    font-size: 20px;
    line-height: 24px;
-   color: #3F3D56;
+   color: #3f3d56;
 }
 
 .persdata__answer input {
@@ -273,23 +314,23 @@ body {
    height: 45px;
    left: 687px;
    top: 307px;
-   border: 1px solid #3F3D56;
+   border: 1px solid #3f3d56;
    box-sizing: border-box;
    border-radius: 10px;
    margin-top: 10px;
    padding: 6px;
 }
 
-.persdata__answer input[type=radio]{
+.persdata__answer input[type="radio"] {
    display: none;
 }
 
-.sex__block .persdata__answer label{
+.sex__block .persdata__answer label {
    display: inline-block;
    cursor: pointer;
    padding: 0px 15px;
    line-height: 44px;
-   border: 1px solid #3F3D56;
+   border: 1px solid #3f3d56;
    border-radius: 10px;
    user-select: none;
    margin-right: 30px;
@@ -297,58 +338,58 @@ body {
 }
 
 /* Checked */
-.sex__block .persdata__answer input[type=radio]:checked + label {
-   background: #3F3D56;
-   color: #FFFFFF;
-}
-   
-  /* Hover */
-.sex__block .persdata__answer label:hover {
-   color: #3F3D56;
+.sex__block .persdata__answer input[type="radio"]:checked + label {
+   background: #3f3d56;
+   color: #ffffff;
 }
 
-.name__block .persdata__answer{
+/* Hover */
+.sex__block .persdata__answer label:hover {
+   color: #3f3d56;
+}
+
+.name__block .persdata__answer {
    display: flex;
    margin-bottom: 72px;
 }
 
-.sex__block .persdata__answer{
+.sex__block .persdata__answer {
    display: flex;
    margin-bottom: 66px;
 }
 
-.email__block .persdata__answer{
+.email__block .persdata__answer {
    display: flex;
    margin-bottom: 54px;
 }
 
-.persdata__button input{
+.persdata__button input {
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: center;
-   background: #3F3D56;
+   background: #3f3d56;
    border-radius: 10px;
-   color: #FFFFFF;
+   color: #ffffff;
    font-weight: 500;
    font-size: 24px;
    line-height: 28px;
    padding: 10px;
 }
 
-.persdata__button{
+.persdata__button {
    padding-bottom: 72px;
 }
 
 .cabinet__menu {
    display: flex;
-   background-color: #FFFFFF;
+   background-color: #ffffff;
    border-radius: 45px;
 }
 
 .cabinet__menu button {
    appearance: none;
-   background-color: #FFFFFF;
+   background-color: #ffffff;
    border-width: 0;
    padding-left: 0px;
    cursor: pointer;
@@ -359,43 +400,43 @@ body {
 
 .cabinet__menu button:hover {
    border-color: #dadce0;
-   box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
    color: #202124;
- }
- 
-.cabinet__menu button:focus {
-   border-color: #3F3D56;
-   outline: none;
- }
+}
 
-.menu__list{
+.cabinet__menu button:focus {
+   border-color: #3f3d56;
+   outline: none;
+}
+
+.menu__list {
    margin-left: 41px;
    margin-top: 40px;
    margin-bottom: 2px;
 }
 
-.menu__list li{
+.menu__list li {
    padding-left: 18px;
    padding-bottom: 40px;
 }
 
-.menu__list .profile{
+.menu__list .profile {
    list-style-image: url("../content/profile.svg");
 }
 
-.menu__list .tickets{
+.menu__list .tickets {
    list-style-image: url("../content/tickets.svg");
 }
 
-.menu__list .purchase__history{
+.menu__list .purchase__history {
    list-style-image: url("../content/purchase_history.svg");
    margin-right: 83px;
-}   
+}
 
-.menu__list .exit{
+.menu__list .exit {
    list-style-image: url("../content/exit.svg");
 }
 
-.leftpart__cabinet img{
+.leftpart__cabinet img {
    margin-top: 189px;
 }
