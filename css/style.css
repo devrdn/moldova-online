@@ -274,7 +274,7 @@ body {
 }
 
 .footer-container {
-  padding: 54px;
+  padding: 30px;
   margin-top: 54px;
   background-color: #3f3d56;
   min-width: 1272px;
@@ -416,7 +416,7 @@ body {
 }
 
 /* Checked */
-.sex__block .persdata__answer input[type=radio]:checked + label {
+.sex__block .persdata__answer input[type="radio"]:checked + label {
   background: #3f3d56;
   color: white;
 }
@@ -453,6 +453,8 @@ body {
 }
 
 .persdata__button input {
+  outline: none;
+  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,10 +475,19 @@ body {
   font-size: 24px;
   line-height: 28px;
   padding: 10px;
+  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
 }
 
 .persdata__button {
   padding-bottom: 72px;
+}
+
+.persdata__button input:hover {
+  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  background-color: #514e6e;
+  cursor: context-menu;
 }
 
 .cabinet__menu {
@@ -501,10 +512,10 @@ body {
           transform-style: preserve-3d;
   -webkit-transform: translateZ(-25px);
           transform: translateZ(-25px);
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
 }
 
 .exit button:before,

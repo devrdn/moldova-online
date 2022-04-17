@@ -53,7 +53,6 @@ body {
    margin: 0 auto;
    min-width: 1290px;
    margin-top: 50px;
-   
 }
 
 @include rwd(1850px) {
@@ -96,7 +95,7 @@ body {
 }
 
 .container {
-   width:  1290px;
+   width: 1290px;
    margin: 0 auto;
    margin-top: 250px;
    color: $secondary-color;
@@ -243,7 +242,7 @@ body {
 }
 
 .footer-container {
-   padding: 54px;
+   padding: 30px;
    margin-top: 54px;
    background-color: $secondary-color;
    min-width: 1272px;
@@ -254,7 +253,7 @@ body {
       .footer__menu {
          display: flex;
          align-items: center;
-         
+
          li:not(:last-child) {
             margin-bottom: 12px;
          }
@@ -358,12 +357,12 @@ body {
 }
 
 /* Checked */
-.sex__block .persdata__answer input[type=radio]:checked + label {
+.sex__block .persdata__answer input[type="radio"]:checked + label {
    background: $secondary-color;
    color: $menu-color;
 }
-   
-  /* Hover */
+
+/* Hover */
 .sex__block .persdata__answer label:hover {
    color: $secondary-color;
 }
@@ -389,6 +388,8 @@ body {
 }
 
 .persdata__button input {
+   outline: none;
+   border: 1px solid black;
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -400,10 +401,17 @@ body {
    font-size: 24px;
    line-height: 28px;
    padding: 10px;
+   transition: .2s cubic-bezier(.24,1.23,.35,.44);
 }
 
 .persdata__button {
    padding-bottom: 72px;
+}
+
+.persdata__button input:hover {
+   transition: .2s cubic-bezier(.24,1.23,.35,.44);
+   background-color: #514e6e;
+   cursor:context-menu;
 }
 
 .cabinet__menu {
@@ -421,31 +429,31 @@ body {
    touch-action: manipulation;
    transform-style: preserve-3d;
    transform: translateZ(-25px);
-   transition: transform .25s;
+   transition: transform 0.25s;
 }
 
 .exit button:before,
-.exit button:after{
+.exit button:after {
    display: flex;
-align-items: center;
-justify-content: center;
-border: 5px solid $secondary-color;
-box-sizing: border-box;
-border-radius: 5px;
+   align-items: center;
+   justify-content: center;
+   border: 5px solid $secondary-color;
+   box-sizing: border-box;
+   border-radius: 5px;
 }
-.exit button:before{
-color: #fff;
-background: $secondary-color;
-transform: rotateY(0deg) translateZ(25px);
+.exit button:before {
+   color: #fff;
+   background: $secondary-color;
+   transform: rotateY(0deg) translateZ(25px);
 }
-.exit button:after{
-color: $secondary-color;
-transform: rotateX(90deg) translateZ(25px);
+.exit button:after {
+   color: $secondary-color;
+   transform: rotateX(90deg) translateZ(25px);
 }
 
 .exit button:hover {
    transform: translateZ(-25px) rotateX(-90deg);
- }
+}
 
 .cabinet__menu button:focus {
    border-color: #3f3d56;
