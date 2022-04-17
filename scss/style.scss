@@ -51,8 +51,9 @@ body {
    padding-top: 11.54px;
    padding-bottom: 11.54px;
    margin: 0 auto;
-   margin-top: 50px;
    min-width: 1290px;
+   margin-top: 50px;
+   
 }
 
 @include rwd(1850px) {
@@ -95,7 +96,7 @@ body {
 }
 
 .container {
-   width: 1290px;
+   width:  1290px;
    margin: 0 auto;
    margin-top: 250px;
    color: $secondary-color;

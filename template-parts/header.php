@@ -12,6 +12,7 @@
 </head>
 
 <body>
+   
    <header>
       <div class="header-container">
          <div class="header">
@@ -27,7 +28,7 @@
                      <li class="menu__item"><a href="#" class="">Вопросы</a></li>
                   </ul>
                </nav>
-            </div>
+            </div> 
             <div class="nav__login">
                <span>Войти / Зарегистрироваться</span>
             </div>
