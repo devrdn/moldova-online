@@ -44,19 +44,34 @@ body {
    font-family: $font;
 }
 
+.header-container {
+   background-color: $menu-color;
+   padding-right: 315px;
+   padding-left: 315px;
+   padding-top: 11.54px;
+   padding-bottom: 11.54px;
+   margin: 0 auto;
+   margin-top: 50px;
+   min-width: 1290px;
+}
 
+@include rwd(1850px) {
+   .header-container {
+      padding-right: 50px !important;
+      padding-left: 50px !important;
+   }
+}
+
+@include rwd(1920px) {
+   padding-right: 315px;
+   padding-left: 315px;
+}
 
 .header {
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   margin-top: 50px;
-   padding-right: 315px;
-   padding-left: 315px;
-   padding-top: 11.54px;
-   padding-bottom: 11.54px;
-   background-color: $menu-color;
 }
 
 .header__nav {

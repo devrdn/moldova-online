@@ -12,23 +12,25 @@
 </head>
 
 <body>
-   <div class="header-container">
-      <div class="header">
-         <div class="header__nav">
-            <div class="logo">
-               <a href="."><img src="content/logo.svg" alt="Culture Moldova Logo"></a>
+   <header>
+      <div class="header-container">
+         <div class="header">
+            <div class="header__nav">
+               <div class="logo">
+                  <a href="."><img src="content/logo.svg" alt="Culture Moldova Logo"></a>
+               </div>
+               <nav class="menu">
+                  <ul>
+                     <li class="menu__item"><a href="#" class="">Новости</a></li>
+                     <li class="menu__item"><a href="#" class="">Билеты</a></li>
+                     <li class="menu__item"><a href="#" class="">О Проекте</a></li>
+                     <li class="menu__item"><a href="#" class="">Вопросы</a></li>
+                  </ul>
+               </nav>
             </div>
-            <nav class="menu">
-               <ul>
-                  <li class="menu__item"><a href="#" class="">Новости</a></li>
-                  <li class="menu__item"><a href="#" class="">Билеты</a></li>
-                  <li class="menu__item"><a href="#" class="">О Проекте</a></li>
-                  <li class="menu__item"><a href="#" class="">Вопросы</a></li>
-               </ul>
-            </nav>
-         </div>
-         <div class="nav__login">
-            <span>Войти / Зарегистрироваться</span>
+            <div class="nav__login">
+               <span>Войти / Зарегистрироваться</span>
+            </div>
          </div>
       </div>
-   </div>
+   </header>
