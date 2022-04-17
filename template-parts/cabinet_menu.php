@@ -14,7 +14,7 @@
                     </li>
                     <li class="exit">
                         <form method="post" action="">
-                            <button type="submit" value="Выйти">Выйти</button>
+                            <button type="submit" value="Выйти"></button>
                         </form>
                     </li>
                 </ul>

@@ -396,6 +396,14 @@ body {
   padding: 6px;
 }
 
+.persdata__answer input:focus {
+  outline: none;
+}
+
+.persdata__answer input:hover {
+  outline: none;
+}
+
 .persdata__answer input[type="radio"] {
   display: none;
 }
@@ -487,28 +495,23 @@ body {
   border-radius: 45px;
 }
 
-.exit button {
+button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background-color: white;
   border-width: 0;
   padding-left: 0px;
-  content: "Выйти";
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translateZ(-25px);
-          transform: translateZ(-25px);
   -webkit-transition: -webkit-transform .25s;
   transition: -webkit-transform .25s;
   transition: transform .25s;
   transition: transform .25s, -webkit-transform .25s;
 }
 
-.exit button:before,
-.exit button:after {
+button:before, button::after {
+  content: "Выйти";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,33 +521,29 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 5px solid #3f3d56;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border: 1px solid #fffafa;
   border-radius: 5px;
 }
 
-.exit button:before {
-  color: #fff;
-  background: #3f3d56;
+button:before {
   -webkit-transform: rotateY(0deg) translateZ(25px);
           transform: rotateY(0deg) translateZ(25px);
 }
 
-.exit button:after {
-  color: #3f3d56;
-  -webkit-transform: rotateX(90deg) translateZ(25px);
-          transform: rotateX(90deg) translateZ(25px);
+button:after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  background: #3f3d56;
+  border: 5px solid #3f3d56;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
 }
 
-.exit button:hover {
-  -webkit-transform: translateZ(-25px) rotateX(-90deg);
-          transform: translateZ(-25px) rotateX(-90deg);
-}
-
-.cabinet__menu button:focus {
-  border-color: #3f3d56;
-  outline: none;
+button:hover {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
 }
 
 .menu__list {
@@ -578,3 +577,4 @@ body {
 .leftpart__cabinet img {
   margin-top: 189px;
 }
+/*# sourceMappingURL=style.css.map */
