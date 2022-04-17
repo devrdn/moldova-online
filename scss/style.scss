@@ -233,7 +233,7 @@ body {
 
 .personal__data{
    display: flex;
-   background-color: #FFFFFF;
+   background-color: $menu-color;
    border-radius: 45px;
    margin-left: 30px;
    padding-left: 42px;
@@ -265,7 +265,7 @@ body {
    font-weight: 500;
    font-size: 20px;
    line-height: 24px;
-   color: #3F3D56;
+   color: $secondary-color;
 }
 
 .persdata__answer input {
@@ -273,7 +273,7 @@ body {
    height: 45px;
    left: 687px;
    top: 307px;
-   border: 1px solid #3F3D56;
+   border: 1px solid $secondary-color;
    box-sizing: border-box;
    border-radius: 10px;
    margin-top: 10px;
@@ -289,7 +289,7 @@ body {
    cursor: pointer;
    padding: 0px 15px;
    line-height: 44px;
-   border: 1px solid #3F3D56;
+   border: 1px solid $secondary-color;
    border-radius: 10px;
    user-select: none;
    margin-right: 30px;
@@ -298,13 +298,13 @@ body {
 
 /* Checked */
 .sex__block .persdata__answer input[type=radio]:checked + label {
-   background: #3F3D56;
-   color: #FFFFFF;
+   background: $secondary-color;
+   color: $menu-color;
 }
    
   /* Hover */
 .sex__block .persdata__answer label:hover {
-   color: #3F3D56;
+   color: $secondary-color;
 }
 
 .name__block .persdata__answer{
@@ -327,9 +327,9 @@ body {
    flex-direction: row;
    align-items: center;
    justify-content: center;
-   background: #3F3D56;
+   background: $secondary-color;
    border-radius: 10px;
-   color: #FFFFFF;
+   color: $menu-color;
    font-weight: 500;
    font-size: 24px;
    line-height: 28px;
@@ -342,30 +342,43 @@ body {
 
 .cabinet__menu {
    display: flex;
-   background-color: #FFFFFF;
+   background-color: $menu-color;
    border-radius: 45px;
 }
 
-.cabinet__menu button {
+.exit button {
    appearance: none;
-   background-color: #FFFFFF;
+   background-color: $menu-color;
    border-width: 0;
    padding-left: 0px;
-   cursor: pointer;
-   user-select: none;
-   -webkit-user-select: none;
+   content: "Выйти";
    touch-action: manipulation;
+   transform-style: preserve-3d;
+   transform: translateZ(-25px);
+   transition: transform .25s;
 }
 
-.cabinet__menu button:hover {
-   border-color: #dadce0;
-   box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
-   color: #202124;
- }
- 
-.cabinet__menu button:focus {
-   border-color: #3F3D56;
-   outline: none;
+.exit button:before,
+.exit button:after{
+   display: flex;
+align-items: center;
+justify-content: center;
+border: 5px solid $secondary-color;
+box-sizing: border-box;
+border-radius: 5px;
+}
+.exit button:before{
+color: #fff;
+background: $secondary-color;
+transform: rotateY(0deg) translateZ(25px);
+}
+.exit button:after{
+color: $secondary-color;
+transform: rotateX(90deg) translateZ(25px);
+}
+
+.exit button:hover {
+   transform: translateZ(-25px) rotateX(-90deg);
  }
 
 .menu__list{

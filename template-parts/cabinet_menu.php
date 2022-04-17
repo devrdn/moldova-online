@@ -13,7 +13,9 @@
                         <a href="#">История покупок</a>
                     </li>
                     <li class="exit">
-                        <button value="Выйти">Выйти</button>
+                        <form method="post" action="">
+                            <button type="submit" value="Выйти">Выйти</button>
+                        </form>
                     </li>
                 </ul>
             </div>
