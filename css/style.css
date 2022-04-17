@@ -72,6 +72,12 @@ body {
   margin-right: 20px;
 }
 
+@media only screen and (max-width: 576px) {
+  .container .hero {
+    display: block;
+  }
+}
+
 .container .hero .title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,11 +94,14 @@ body {
 .container .hero .title .title__name {
   color: #f3f4ff;
   font-size: 40px;
-  text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56,
- 1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56,
- -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56,
- 1px 1px 0 #3f3d56;
+  text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56, 1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56;
   line-height: 0;
+}
+
+@media only screen and (max-width: 576px) {
+  .container .hero .title .title__name {
+    font-size: 80px;
+  }
 }
 
 .container .hero .title .subtitle__name {
@@ -101,12 +110,44 @@ body {
   line-height: 2px;
 }
 
+@media only screen and (max-width: 576px) {
+  .container .hero .title .subtitle__name {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container .hero .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container .hero .title__image {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
 .container .grid__info {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 119px;
   grid-row-gap: 32px;
+}
+
+@media only screen and (max-width: 576px) {
+  .container .grid__info {
+    width: 1200px;
+    margin: 0 auto;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .container .news {
@@ -143,6 +184,12 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 40px;
+}
+
+@media only screen and (max-width: 576px) {
+  .container .section {
+    margin-top: 70px;
+  }
 }
 
 .container .latets__news {

@@ -4,6 +4,41 @@ $menu-color: white;
 $primary-color: #f3f4ff;
 $secondary-color: #3f3d56;
 $font: "Roboto", sans-serif;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm {
+   @media only screen and (max-width: #{$screen-sm-min}) {
+      @content;
+   }
+}
+
+@mixin md {
+   @media  only screen  and (max-width: #{$screen-md-min}) {
+      @content;
+   }
+}
+
+@mixin lg {
+   @media   only screen  and (max-width: #{$screen-lg-min}) {
+      @content;
+   }
+}
+
+@mixin xl {
+   @media   only screen  and (max-width: #{$screen-xl-min}) {
+      @content;
+   }
+}
+
+@mixin rwd($screen) {
+   @media (max-width: $screen) {
+       @content;
+   }
+}
+
 
 body {
    background-color: $primary-color;
@@ -22,6 +57,8 @@ body {
    padding-bottom: 11.54px;
    background-color: $menu-color;
 }
+
+
 .header__nav {
    display: inline-flex;
 }
@@ -53,6 +90,9 @@ body {
       justify-content: space-between;
       margin-left: 20px;
       margin-right: 20px;
+      @include sm {
+         display: block;
+      }
       .title {
          display: flex;
          flex-direction: column;
@@ -65,11 +105,27 @@ body {
                -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56,
                1px 1px 0 #3f3d56;
             line-height: 0;
+            @include sm {
+               font-size: 80px;
+            }
          }
          .subtitle__name {
             font-weight: 700;
             font-size: 25px;
             line-height: 2px;
+            @include sm {
+               font-size: 40px;
+            }
+         }
+         @include sm {
+            display: flex;
+            text-align: center;
+         }
+      }
+      .title__image {
+         @include sm {
+            visibility: hidden;
+            height: 0;
          }
       }
    }
@@ -79,6 +135,11 @@ body {
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 119px;
       grid-row-gap: 32px;
+      @include sm {
+         width: 1200px;
+         margin: 0 auto;
+         grid-template-columns: repeat(1, 1fr);
+      }
    }
 
    .news {
@@ -96,7 +157,6 @@ body {
       align-items: center;
       font-weight: 600;
       font-size: 21px;
-
       span {
          margin-top: 36px;
       }
@@ -107,6 +167,9 @@ body {
       text-align: center;
       font-weight: 700;
       font-size: 40px;
+      @include sm {
+         margin-top: 70px;
+      }
    }
 
    .latets__news {
@@ -114,6 +177,7 @@ body {
    }
    .section__title {
       margin-bottom: 30px;
+      
    }
 
    .post__image {
