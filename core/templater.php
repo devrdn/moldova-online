@@ -23,7 +23,7 @@ class templater
     * Заменяет совпадения в шаблоне на соответствующие фразы
     * @return Шаблон
     */
-   public function setTemplate(): templater
+   public function replaceTemplate(): templater
    {
       $html =  $this->template;
       $file = __DIR__ . "\..\data\main.json";
