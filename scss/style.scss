@@ -401,7 +401,7 @@ body {
    font-size: 24px;
    line-height: 28px;
    padding: 10px;
-   transition: .2s cubic-bezier(.24,1.23,.35,.44);
+   transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
 }
 
 .persdata__button {
@@ -409,9 +409,9 @@ body {
 }
 
 .persdata__button input:hover {
-   transition: .2s cubic-bezier(.24,1.23,.35,.44);
+   transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
    background-color: #514e6e;
-   cursor:context-menu;
+   cursor: context-menu;
 }
 
 .cabinet__menu {
@@ -490,4 +490,90 @@ body {
 
 .leftpart__cabinet img {
    margin-top: 189px;
+}
+
+// LOGIN STYLES
+
+.container-login {
+   margin-top: 30px;
+}
+
+.content {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+   .login {
+      background-color: #fff;
+      border-radius: 10px;
+      padding-top: 35px;
+      padding-left: 110px;
+      padding-right: 110px;
+      padding-bottom: 60px;
+   }
+
+   .login__title {
+      display: flex;
+      font-size: 20px;
+      justify-content: space-around;
+      margin-bottom: 28px;
+      button {
+         background: none;
+         border: none;
+         cursor: pointer;
+      }
+   }
+
+   .login__title .log::after {
+      margin-left: 61px;
+   }
+
+   .login__stage, .register__stage {
+      .input__form {
+         margin-bottom: 32px;
+      }
+      & input {
+         width: 470px;
+      }
+      .input__form {
+         padding-top: 16px;
+         padding-bottom: 16px;
+         border-radius: 10px;
+         padding-left: 10px;
+         background-color: $primary-color;
+         border: none;
+         outline: none;
+      }
+
+      .submit__button {
+         text-align: center;
+         .btn__sbm {
+            padding-bottom: 15px;
+            padding-top: 15px;
+            border-radius: 39px;
+            background-color: $secondary-color;
+            color: white;
+            border: none;
+            &:hover {
+               transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+               background-color: #514e6e;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
+
+// Цвета
+
+.black-clr {
+   color: #252525 !important;
+}
+
+.gray-clr {
+   color: rgb(163, 163, 163);
+}
+
+.hidden {
+   overflow: hidden;
 }

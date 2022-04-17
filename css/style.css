@@ -589,3 +589,97 @@ body {
 .leftpart__cabinet img {
   margin-top: 189px;
 }
+
+.container-login {
+  margin-top: 30px;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .login {
+  background-color: #fff;
+  border-radius: 10px;
+  padding-top: 35px;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-bottom: 60px;
+}
+
+.content .login__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 28px;
+}
+
+.content .login__title button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.content .login__title .log::after {
+  margin-left: 61px;
+}
+
+.content .login__stage .input__form, .content .register__stage .input__form {
+  margin-bottom: 32px;
+}
+
+.content .login__stage input, .content .register__stage input {
+  width: 470px;
+}
+
+.content .login__stage .input__form, .content .register__stage .input__form {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: #f3f4ff;
+  border: none;
+  outline: none;
+}
+
+.content .login__stage .submit__button, .content .register__stage .submit__button {
+  text-align: center;
+}
+
+.content .login__stage .submit__button .btn__sbm, .content .register__stage .submit__button .btn__sbm {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 39px;
+  background-color: #3f3d56;
+  color: white;
+  border: none;
+}
+
+.content .login__stage .submit__button .btn__sbm:hover, .content .register__stage .submit__button .btn__sbm:hover {
+  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  background-color: #514e6e;
+  cursor: pointer;
+}
+
+.black-clr {
+  color: #252525 !important;
+}
+
+.gray-clr {
+  color: #a3a3a3;
+}
+
+.hidden {
+  overflow: hidden;
+}
