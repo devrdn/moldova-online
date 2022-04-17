@@ -332,6 +332,10 @@ body {
   padding: 4px;
 }
 
+.containet-cabinet {
+  margin-top: 60px;
+}
+
 .personal__account {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -574,4 +578,3 @@ body {
 .leftpart__cabinet img {
   margin-top: 189px;
 }
-/*# sourceMappingURL=style.css.map */

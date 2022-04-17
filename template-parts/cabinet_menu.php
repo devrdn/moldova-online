@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container containet-cabinet">
     <div class="personal__account">
         <div class="leftpart__cabinet">
             <div class="cabinet__menu">
