@@ -343,6 +343,14 @@ body {
    padding: 6px;
 }
 
+.persdata__answer input:focus {
+   outline: none;
+}
+
+.persdata__answer input:hover {
+   outline: none;
+}
+
 .persdata__answer input[type="radio"] {
    display: none;
 }
@@ -423,13 +431,13 @@ body {
    border-radius: 45px;
 }
 
-.exit button {
+
+
+button{
    appearance: none;
    background-color: $menu-color;
    border-width: 0;
    padding-left: 0px;
-   content: "Выйти";
-   touch-action: manipulation;
    transform-style: preserve-3d;
    transform: translateZ(-25px);
    transition: transform 0.25s;
@@ -458,10 +466,16 @@ body {
    transform: translateZ(-25px) rotateX(-90deg);
 }
 
-.cabinet__menu button:focus {
-   border-color: #3f3d56;
-   outline: none;
-}
+ button:after{
+   display: flex;
+   color: #fff;
+   background: #3f3d56;
+   border: 5px solid #3f3d56;
+   transform: rotateX(90deg) ;
+ }
+ button:hover{
+   transform: rotateX(-90deg);
+ }
 
 .menu__list {
    margin-left: 41px;
