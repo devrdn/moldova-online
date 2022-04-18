@@ -286,7 +286,7 @@ body {
    }
 }
 
-.containet-cabinet {
+.container-cabinet {
    margin-top: 60px;
 }
 
@@ -341,6 +341,14 @@ body {
    border-radius: 10px;
    margin-top: 10px;
    padding: 6px;
+}
+
+.persdata__answer input:focus {
+   outline: none;
+}
+
+.persdata__answer input:hover {
+   outline: none;
 }
 
 .persdata__answer input[type="radio"] {
@@ -423,44 +431,38 @@ body {
    border-radius: 45px;
 }
 
-.exit button {
+
+
+.exit button{
    appearance: none;
    background-color: $menu-color;
    border-width: 0;
    padding-left: 0px;
-   content: "Выйти";
-   touch-action: manipulation;
    transform-style: preserve-3d;
-   transform: translateZ(-25px);
    transition: transform 0.25s;
 }
 
 .exit button:before,
 .exit button:after {
+   content: "Выйти";
    display: flex;
    align-items: center;
    justify-content: center;
-   border: 5px solid $secondary-color;
-   box-sizing: border-box;
+   border: 1px solid #f3f4ff;
    border-radius: 5px;
 }
 .exit button:before {
-   color: #fff;
-   background: $secondary-color;
    transform: rotateY(0deg) translateZ(25px);
 }
 .exit button:after {
-   color: $secondary-color;
+   color: $menu-color;
+   background-color: #3f3d56;
+   border: 1px solid #3f3d56;
    transform: rotateX(90deg) translateZ(25px);
 }
 
 .exit button:hover {
    transform: translateZ(-25px) rotateX(-90deg);
-}
-
-.cabinet__menu button:focus {
-   border-color: #3f3d56;
-   outline: none;
 }
 
 .menu__list {
@@ -558,7 +560,7 @@ body {
             color: white;
             border: none;
             &:hover {
-               transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+               transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
                background-color: #514e6e;
                cursor: pointer;
             }
@@ -579,4 +581,6 @@ body {
 
 .hidden {
    overflow: hidden;
+   display: none;
+   visibility: hidden;
 }

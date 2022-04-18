@@ -1,4 +1,4 @@
-<div class="container containet-cabinet">
+<div class="container container-cabinet">
     <div class="personal__account">
         <div class="leftpart__cabinet">
             <div class="cabinet__menu">
@@ -14,7 +14,7 @@
                     </li>
                     <li class="exit">
                         <form method="post" action="">
-                            <button type="submit" value="Выйти">Выйти</button>
+                            <button type="submit" value="Выйти"></button>
                         </form>
                     </li>
                 </ul>

@@ -336,7 +336,7 @@ body {
   padding: 4px;
 }
 
-.containet-cabinet {
+.container-cabinet {
   margin-top: 60px;
 }
 
@@ -398,6 +398,14 @@ body {
   border-radius: 10px;
   margin-top: 10px;
   padding: 6px;
+}
+
+.persdata__answer input:focus {
+  outline: none;
+}
+
+.persdata__answer input:hover {
+  outline: none;
 }
 
 .persdata__answer input[type="radio"] {
@@ -509,13 +517,8 @@ body {
   background-color: white;
   border-width: 0;
   padding-left: 0px;
-  content: "Выйти";
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translateZ(-25px);
-          transform: translateZ(-25px);
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
@@ -524,6 +527,7 @@ body {
 
 .exit button:before,
 .exit button:after {
+  content: "Выйти";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -533,21 +537,19 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 5px solid #3f3d56;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border: 1px solid #f3f4ff;
   border-radius: 5px;
 }
 
 .exit button:before {
-  color: #fff;
-  background: #3f3d56;
   -webkit-transform: rotateY(0deg) translateZ(25px);
           transform: rotateY(0deg) translateZ(25px);
 }
 
 .exit button:after {
-  color: #3f3d56;
+  color: white;
+  background-color: #3f3d56;
+  border: 1px solid #3f3d56;
   -webkit-transform: rotateX(90deg) translateZ(25px);
           transform: rotateX(90deg) translateZ(25px);
 }
@@ -555,11 +557,6 @@ body {
 .exit button:hover {
   -webkit-transform: translateZ(-25px) rotateX(-90deg);
           transform: translateZ(-25px) rotateX(-90deg);
-}
-
-.cabinet__menu button:focus {
-  border-color: #3f3d56;
-  outline: none;
 }
 
 .menu__list {
@@ -670,8 +667,8 @@ body {
 }
 
 .content .login__stage .submit__button .btn__sbm:hover, .content .register__stage .submit__button .btn__sbm:hover {
-  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
-  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
+  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
   background-color: #514e6e;
   cursor: pointer;
 }
@@ -686,4 +683,6 @@ body {
 
 .hidden {
   overflow: hidden;
+  display: none;
+  visibility: hidden;
 }
