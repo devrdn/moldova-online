@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-require_once __DIR__."/../config.php";
-require_once __DIR__."/../template-functions/template-functions.php";
+require_once __DIR__ . "/../config.php";
+require_once __DIR__ . "/../template-functions/template-functions.php";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
+
    config::core();
 
    $data = [
@@ -27,16 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "reg" => "Регистрация"
    ];
 
-   if($_POST["sumbit"] == $actions["login"]) {
-      if ($data["name"] == 0) {
-        
-      }
-   }
-   
-   else if ($_POST["sumbit"] == $actions["reg"]) {
+   if ($_POST["sumbit"] == $actions["login"]) {
       if ($data["name"] == 0) {
          
       }
+   } else if ($_POST["sumbit"] == $actions["reg"]) {
+      if ($data["name"] == 0) {
+
+      }
    }
-   
 }

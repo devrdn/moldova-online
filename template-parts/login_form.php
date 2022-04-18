@@ -25,7 +25,7 @@
                   </div>
                </div>
             </form>
-            <form action="handlers/loginhandler.php" method="POST">
+            <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
                <div class="register__stage hidden" id="register__stage">
                   <div class="login__name">
                      <input type="text" class="input__form" name="name" id="email" placeholder="Name" required>
