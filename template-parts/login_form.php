@@ -1,17 +1,18 @@
-<?php
-require_once __DIR__."/../template-functions/template-functions.php";
-add_script("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"); 
-add_script("script/formselector.js"); 
-?>
+<?php require_once __DIR__ . "/../handlers/loginhandler.php"; ?>
+
 <div class="container container-login">
    <div class="content">
       <div class="login">
          <div class="login__form">
+            <?php
+               add_script("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js");
+               add_script("script/formselector.js");
+            ?>
             <div class="login__title">
                <button class="log black-clr" id="log">Login</button>
                <button class="reg gray-clr" id="reg">Register</button>
             </div>
-            <form action="handlers/loginhandler.php" method="POST">
+            <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
                <div class="login__stage" id="login__stage">
                   <div class="login__email">
                      <input type="text" class="input__form" name="email" id="email" placeholder="Email" required>
@@ -33,7 +34,7 @@ add_script("script/formselector.js");
                      <input type="text" class="input__form" name="nickname" id="email" placeholder="Nickname" required>
                   </div>
                   <div class="login__email">
-                     <input type="text" class="input__form" name="email" id="email" placeholder="Email" required> 
+                     <input type="text" class="input__form" name="email" id="email" placeholder="Email" required>
                   </div>
                   <div class="login__paswd">
                      <input type="password" class="input__form" name="pswd" id="pswd" placeholder="Password" required>

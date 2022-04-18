@@ -22,12 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "pswd" => 0
    ];
 
-   if($_POST["sumbit"] == "Войти") {
+   $actions = [
+      "login" => "Войти",
+      "reg" => "Регистрация"
+   ];
+
+   if($_POST["sumbit"] == $actions["login"]) {
       if ($data["name"] == 0) {
-         
+        
       }
    }
-   else if ($_POST["sumbit"] == "Регистрация") {
+   
+   else if ($_POST["sumbit"] == $actions["reg"]) {
       if ($data["name"] == 0) {
          
       }
