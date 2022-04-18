@@ -1,5 +1,6 @@
 <?php
-class DataBase {
+class DataBase
+{
     private $host = "localhost";
     private $user = "root";
     private $password = "";
@@ -7,31 +8,47 @@ class DataBase {
     private $pdo;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         try {
             $this->pdo = new \PDO("mysql:host={$this->host};dbname={$this->database}", $this->user, $this->password);
         } catch (Exception $e) {
             echo "DB Error: " . $e->getMessage();
         }
     }
-        
-    
-    public function query(string $query, bool $fetch = true) : array
+
+
+    /**
+     * Выполняет запрос
+     * 
+     * @param $query string
+     * @param $fetch [default: true] если требуется fetch
+     */
+    public function query(string $query, bool $fetch = true): array
     {
+        $array = array();
         try {
             $result = $this->pdo->query($query);
             if ($fetch == true) {
-                $array = array();
                 $array = $result->fetchAll(\PDO::FETCH_ASSOC);
             }
         } catch (Exception $e) {
-            exit($e->getMessage(). ", query: ". $query);
+            exit($e->getMessage() . ", query: " . $query);
         }
         $result = null;
         return $array;
     }
 
-    public function prepare_query(string $query, array $data, bool $fetch = true) {
+    /**
+     * Подготовленный запрос
+     * 
+     * @param $query
+     * @param $data
+     * @param $fetch если требуется fetch
+     */
+    public function prepare_query(string $query, array $data, bool $fetch = true): array
+    {
+        $array = array();
         try {
             $result = $this->pdo->prepare($query);
             $result->execute($data);
@@ -40,31 +57,43 @@ class DataBase {
                 $array = $result->fetchAll(\PDO::FETCH_ASSOC);
             }
         } catch (Exception $e) {
-            exit ($e->getMessage());
+            exit($e->getMessage());
         }
         $result = null;
         return $array;
     }
 
-    private function deleteSqlComments(string $string = ''): string 
+    /**
+     * Удаление комментарием SQL
+     */
+    private function deleteSqlComments(string $string = ''): string
     {
         $pattern =  '@(--[^\r\n]*)|(/\*[\w\W]*?(?=\*/)\*/)@ms';
         return (empty($string)) ? '' : preg_replace($pattern, '', $string);
     }
 
 
-    public function select(array $tables, array $data = [ "*" ], array $where = [], array $limit =[]) {
+    /**
+     * Запрос за выбор
+     * 
+     * @param array $table
+     * @param array $data
+     * @param array $where
+     * @param array limit 
+     */
+    public function select(array $tables, array $data = ["*"], array $where = [], array $limit = [])
+    {
         $fields = implode(", ", $data);
         $tables = implode(", ", $tables);
         $query = "SELECT {$fields} FROM {$tables}";
         if (!empty($where)) {
             $twhere = [];
-            
-            foreach($where as $key => $key) {
+
+            foreach ($where as $key => $param) {
                 $twere[] = "{$key} = :{$key}";
-            }  
-            
-            $query .= " WHERE ". implode(" AND ", $twere);
+            }
+
+            $query .= " WHERE " . implode(" AND ", $twere);
         }
         if (!empty($limit)) {
             $query .= " LIMIT {$limit['offset']}, {$limit['limit']}";
@@ -72,12 +101,78 @@ class DataBase {
         return $this->prepare_query($query, $where);
     }
 
-    public function exists(array $table, array $where) {
+    /**
+     * Вставка данных в таблицу
+     * 
+     * @param string $table таблица
+     * @param array $value значения
+     */
+    public function insert(string $table, array $values)
+    {
+        $columns = implode(", ", array_keys($values));
+        $value = '"' . implode('","', array_values($values));
+        $query = "INSERT INTO {$table} ($columns) VALUES ({$value}\")";
+        return $this->query($query, false);
+    }
+
+    /**
+     * Удаление записи из таблицы
+     * 
+     * @param string $table таблица
+     * @param array $where условия выполнения
+     */
+    public function delete(string $table, array $where) {
+        $twhere = [];
+        foreach($where as $key => $value) {
+            $twhere[] = "{$key} = '{$value}'";
+        }
+        $twhere = implode (" AND ", $twhere);
+        $query = "DELETE FROM {$table} WHERE {$twhere}";
+        $this->query($query, false);
+    }
+
+    /**
+     * Обновление данных
+     * 
+     * @param string $table
+     * @param array $values
+     * @param array $where
+     */
+    public function update(string $table, array $values, array $where)
+    {
+        $twhere = [];
+        foreach ($where as $key => $param) {
+            $twhere[] = "{$key} = '{$param}'";
+        }
+        $twhere = implode(" AND ", $twhere);
+        $tval = [];
+        foreach ($values as $key => $param) {
+            $tval[] = "{$key} = '{$param}'";
+        }
+        $tval = implode(", ", $tval);
+
+        $query = "UPDATE {$table} SET {$tval}  WHERE {$twhere}";
+        return $this->query($query, false);
+    }
+
+    /**
+     * Проверка, если в таблице существует хотя бы одна запись
+     * 
+     * @param string $table
+     * @param arraty $where conditions
+     */
+    public function exists(string $table, array $where)
+    {
+        $table = (array)$table;
         $result = $this->select($table, ["count(*) as c"], $where);
         return count($result)  > 0 && $result[0]["c"] > 0;
     }
 
-    public function disconnect() {
+    /**
+     * Отключение от базы данных
+     */
+    public function disconnect()
+    {
         $this->pdo = null;
     }
 }
