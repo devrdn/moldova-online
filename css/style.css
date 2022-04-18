@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 body {
   background-color: #f3f4ff;
@@ -519,23 +518,16 @@ button {
   padding-left: 0px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-<<<<<<< HEAD
   -webkit-transform: translateZ(-25px);
           transform: translateZ(-25px);
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
-=======
-  -webkit-transition: -webkit-transform .25s;
-  transition: -webkit-transform .25s;
-  transition: transform .25s;
-  transition: transform .25s, -webkit-transform .25s;
->>>>>>> 4c07d8b2a6abd8c85154fa3a68a254575227726e
 }
 
-button:before, button::after {
-  content: "Выйти";
+.exit button:before,
+.exit button:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,13 +537,28 @@ button:before, button::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #fffafa;
+  border: 5px solid #3f3d56;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 5px;
 }
 
-button:before {
+.exit button:before {
+  color: #fff;
+  background: #3f3d56;
   -webkit-transform: rotateY(0deg) translateZ(25px);
           transform: rotateY(0deg) translateZ(25px);
+}
+
+.exit button:after {
+  color: #3f3d56;
+  -webkit-transform: rotateX(90deg) translateZ(25px);
+          transform: rotateX(90deg) translateZ(25px);
+}
+
+.exit button:hover {
+  -webkit-transform: translateZ(-25px) rotateX(-90deg);
+          transform: translateZ(-25px) rotateX(-90deg);
 }
 
 button:after {
@@ -601,7 +608,6 @@ button:hover {
 .leftpart__cabinet img {
   margin-top: 189px;
 }
-<<<<<<< HEAD
 
 .container-login {
   margin-top: 30px;
@@ -679,8 +685,8 @@ button:hover {
 }
 
 .content .login__stage .submit__button .btn__sbm:hover, .content .register__stage .submit__button .btn__sbm:hover {
-  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
-  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
+  -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
+  transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
   background-color: #514e6e;
   cursor: pointer;
 }
@@ -698,6 +704,3 @@ button:hover {
   display: none;
   visibility: hidden;
 }
-=======
-/*# sourceMappingURL=style.css.map */
->>>>>>> 4c07d8b2a6abd8c85154fa3a68a254575227726e
