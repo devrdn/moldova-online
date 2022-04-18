@@ -421,7 +421,7 @@ body {
 
 .persdata__button input:hover {
    transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
-   background-color: #514e6e;
+   background-color: $secondary-color;
    cursor: context-menu;
 }
 
@@ -456,8 +456,8 @@ body {
 }
 .exit button:after {
    color: $menu-color;
-   background-color: #3f3d56;
-   border: 1px solid #3f3d56;
+   background-color: $secondary-color;
+   border: 1px solid $secondary-color;
    transform: rotateX(90deg) translateZ(25px);
 }
 
