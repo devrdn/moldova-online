@@ -286,7 +286,7 @@ body {
    }
 }
 
-.containet-cabinet {
+.container-cabinet {
    margin-top: 60px;
 }
 
@@ -439,43 +439,31 @@ body {
    border-width: 0;
    padding-left: 0px;
    transform-style: preserve-3d;
-   transform: translateZ(-25px);
    transition: transform 0.25s;
 }
 
 .exit button:before,
 .exit button:after {
+   content: "Выйти";
    display: flex;
    align-items: center;
    justify-content: center;
-   border: 5px solid $secondary-color;
-   box-sizing: border-box;
+   border: 1px solid #f3f4ff;
    border-radius: 5px;
 }
 .exit button:before {
-   color: #fff;
-   background: $secondary-color;
    transform: rotateY(0deg) translateZ(25px);
 }
 .exit button:after {
-   color: $secondary-color;
+   color: $menu-color;
+   background-color: #3f3d56;
+   border: 1px solid #3f3d56;
    transform: rotateX(90deg) translateZ(25px);
 }
 
 .exit button:hover {
    transform: translateZ(-25px) rotateX(-90deg);
 }
-
-/* button:after{
-   display: flex;
-   color: #fff;
-   background: #3f3d56;
-   border: 5px solid #3f3d56;
-   transform: rotateX(90deg) ;
- }
- button:hover{
-   transform: rotateX(-90deg);
- }*/
 
 .menu__list {
    margin-left: 41px;

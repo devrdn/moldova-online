@@ -1,9 +1,13 @@
 <?php 
 
+require_once __DIR__."/../config.php";
 require_once __DIR__."/../template-functions/template-functions.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
+   config::core();
+
    $data = [
       "name" => verifyData($_POST["name"]),
       "nickname" => verifyData($_POST["nickname"]),
@@ -20,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    if($_POST["sumbit"] == "Войти") {
       if ($data["name"] == 0) {
-
+         
       }
    }
    else if ($_POST["sumbit"] == "Регистрация") {
@@ -28,4 +32,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          
       }
    }
-} 
+   
+}
