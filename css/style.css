@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 body {
   background-color: #f3f4ff;
@@ -335,7 +336,7 @@ body {
   padding: 4px;
 }
 
-.containet-cabinet {
+.container-cabinet {
   margin-top: 60px;
 }
 
@@ -518,8 +519,6 @@ body {
   padding-left: 0px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translateZ(-25px);
-          transform: translateZ(-25px);
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
@@ -528,6 +527,7 @@ body {
 
 .exit button:before,
 .exit button:after {
+  content: "Выйти";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -537,21 +537,19 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 5px solid #3f3d56;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border: 1px solid #f3f4ff;
   border-radius: 5px;
 }
 
 .exit button:before {
-  color: #fff;
-  background: #3f3d56;
   -webkit-transform: rotateY(0deg) translateZ(25px);
           transform: rotateY(0deg) translateZ(25px);
 }
 
 .exit button:after {
-  color: #3f3d56;
+  color: white;
+  background-color: #3f3d56;
+  border: 1px solid #3f3d56;
   -webkit-transform: rotateX(90deg) translateZ(25px);
           transform: rotateX(90deg) translateZ(25px);
 }
@@ -561,16 +559,6 @@ body {
           transform: translateZ(-25px) rotateX(-90deg);
 }
 
-/* button:after{
-   display: flex;
-   color: #fff;
-   background: #3f3d56;
-   border: 5px solid #3f3d56;
-   transform: rotateX(90deg) ;
- }
- button:hover{
-   transform: rotateX(-90deg);
- }*/
 .menu__list {
   margin-left: 41px;
   margin-top: 40px;
