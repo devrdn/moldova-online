@@ -14,7 +14,7 @@
             </div>
          </div>
          <div class="social__icons">
-            <div class="fa fa-facebook"></div>
+            <a href="https://rutube.ru/video/4c1a350359a262ce5eec428c7bdb245b/" class="fa fa-facebook"></a>
             <div class="fa fa-instagram"></div>
             <div class="fa fa-twitter"></div>
             <div class="fa fa-youtube"></div>
