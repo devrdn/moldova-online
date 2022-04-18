@@ -433,7 +433,7 @@ body {
 
 
 
-button{
+.exit button{
    appearance: none;
    background-color: $menu-color;
    border-width: 0;
@@ -466,7 +466,7 @@ button{
    transform: translateZ(-25px) rotateX(-90deg);
 }
 
- button:after{
+/* button:after{
    display: flex;
    color: #fff;
    background: #3f3d56;
@@ -475,7 +475,7 @@ button{
  }
  button:hover{
    transform: rotateX(-90deg);
- }
+ }*/
 
 .menu__list {
    margin-left: 41px;
