@@ -15,18 +15,12 @@
     <header>
         <div class="admin-header-container">
             <div class="admin-header">
-                <div class="admin__navbar">
-                    <div class="mr-4">
-                        <div class="dropdown">
-                            <a class="dropdown-toggle" id="admin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                                <img src="content/admin.svg" alt="Admin">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="messages">
-                                <a class="dropdown-item" href="#">Edit my profile</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="admin-header__nav">
+                    
+                </div>
+                <div class="admin-nav__login">
+                    <a href="#"><img src="content/admin.svg" alt="Admin"></a>
                 </div>
             </div>
+        </div>
     </header>
