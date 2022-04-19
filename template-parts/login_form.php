@@ -1,12 +1,16 @@
-<?php require_once __DIR__ . "/../handlers/loginhandler.php"; ?>
+<?php require_once __DIR__ . "/../handlers/loginhandler.php";
+
+
+
+?>
 
 <div class="container container-login">
    <div class="content">
       <div class="login">
          <div class="login__form">
             <?php
-               add_script("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js");
-               add_script("script/formselector.js");
+            add_script("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js");
+            add_script("script/formselector.js");
             ?>
             <div class="login__title">
                <button class="log black-clr" id="log">Login</button>
@@ -26,18 +30,25 @@
                </div>
             </form>
             <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
+               <?php if ($_GET['mes'] == 'success') {
+                  $err['success'] = '<div class="alert alert-success">Регистрация прошла успешно!</div>';
+               } ?>
                <div class="register__stage hidden" id="register__stage">
                   <div class="login__name">
-                     <input type="text" class="input__form" name="name" id="email" placeholder="Name" required>
+                     <input type="text" class="input__form" name="name" value="<?php echo $_POST['name'] ?>" id="email" placeholder="Name" required>
+                     <?php echo $err['name'] ?>
                   </div>
                   <div class="login__nickname">
-                     <input type="text" class="input__form" name="nickname" id="email" placeholder="Nickname" required>
+                     <input type="text" class="input__form" name="nickname" value="<?php echo $_POST['nickname'] ?>" id="email" placeholder="Nickname" required>
+                     <?php echo $err['nickname'] ?>
                   </div>
                   <div class="login__email">
-                     <input type="text" class="input__form" name="email" id="email" placeholder="Email" required>
+                     <input type="text" class="input__form" name="email" value="<?php echo $_POST['email'] ?>" id="email" placeholder="Email" required>
+                     <?php echo $err['email'] ?>
                   </div>
                   <div class="login__paswd">
-                     <input type="password" class="input__form" name="pswd" id="pswd" placeholder="Password" required>
+                     <input type="password" class="input__form" name="pswd" value="<?php echo $_POST['pswd'] ?>" id="pswd" placeholder="Password" required>
+                     <?php echo $err['pswd'] ?>
                   </div>
                   <div class="submit__button">
                      <input type="submit" class="btn btn__sbm" name="sumbit" id="sumbit" value="Регистрация">

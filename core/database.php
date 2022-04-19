@@ -159,7 +159,7 @@ class DataBase
      * Проверка, если в таблице существует хотя бы одна запись
      * 
      * @param string $table
-     * @param arraty $where conditions
+     * @param array $where conditions
      */
     public function exists(string $table, array $where)
     {
