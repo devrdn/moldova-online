@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/admin_style.scss"
+    ],
+    "names": [],
+    "file": "admin_style.css"
+}
