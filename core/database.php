@@ -24,13 +24,17 @@ class DataBase
      * @param $query string
      * @param $fetch [default: true] если требуется fetch
      */
-    public function query(string $query, bool $fetch = true): array
+    public function query(string $query, bool $fetch = false, bool $fetchOne = false): array
     {
         $array = array();
         try {
             $result = $this->pdo->query($query);
             if ($fetch == true) {
-                $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                if ($fetchOne) {
+                    $array = $result->fetch(\PDO::FETCH_ASSOC);
+                } else {
+                    $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                }
             }
         } catch (Exception $e) {
             exit($e->getMessage() . ", query: " . $query);
@@ -46,15 +50,21 @@ class DataBase
      * @param $data
      * @param $fetch если требуется fetch
      */
-    public function prepare_query(string $query, array $data, bool $fetch = true): array
+    public function prepare_query(string $query, array $data, bool $fetch = false, bool $fetchOne = false): array
     {
+        $this->deleteSqlComments($query);
+        $this->pdo->quote($query);
         $array = array();
         try {
             $result = $this->pdo->prepare($query);
             $result->execute($data);
             if ($fetch == true) {
                 $array = array();
-                $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                if ($fetchOne) {
+                    $array = $result->fetch(\PDO::FETCH_ASSOC);
+                } else {
+                    $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                }
             }
         } catch (Exception $e) {
             exit($e->getMessage());
@@ -81,7 +91,7 @@ class DataBase
      * @param array $where
      * @param array limit 
      */
-    public function select(array $tables, array $data = ["*"], array $where = [], array $limit = [])
+    public function select(array $tables, array $data = ["*"], array $where = [], array $limit = [], bool $fetchOne = false)
     {
         $fields = implode(", ", $data);
         $tables = implode(", ", $tables);
@@ -98,7 +108,9 @@ class DataBase
         if (!empty($limit)) {
             $query .= " LIMIT {$limit['offset']}, {$limit['limit']}";
         }
-        return $this->prepare_query($query, $where);
+        $this->deleteSqlComments($query);
+        $this->pdo->quote($query);
+        return $this->prepare_query($query, $where, true, $fetchOne);
     }
 
     /**
@@ -107,12 +119,15 @@ class DataBase
      * @param string $table таблица
      * @param array $value значения
      */
-    public function insert(string $table, array $values)
+    public function insert(string $table, array $values, array $return = [])
     {
         $columns = implode(", ", array_keys($values));
         $value = '"' . implode('","', array_values($values));
         $query = "INSERT INTO {$table} ($columns) VALUES ({$value}\")";
-        return $this->query($query, false);
+        $this->query($query, false);
+        if ($return != []) {
+            return $this->select((array) $table, $return, $values, [], true);
+        }
     }
 
     /**
@@ -121,12 +136,13 @@ class DataBase
      * @param string $table таблица
      * @param array $where условия выполнения
      */
-    public function delete(string $table, array $where) {
+    public function delete(string $table, array $where)
+    {
         $twhere = [];
-        foreach($where as $key => $value) {
+        foreach ($where as $key => $value) {
             $twhere[] = "{$key} = '{$value}'";
         }
-        $twhere = implode (" AND ", $twhere);
+        $twhere = implode(" AND ", $twhere);
         $query = "DELETE FROM {$table} WHERE {$twhere}";
         $this->query($query, false);
     }

@@ -30,8 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    ];
 
    if ($_POST["sumbit"] == $actions["login"]) {
-      if ($data["name"] == 0) {
-      }
+      
    } else if ($_POST["sumbit"] == $actions["reg"]) {
       $pattern_name = "/^[A-Za-zА-Яа-я]{3,15}$/";
       $pattern_pswd = "/^[0-9A-Za-z$;%]{8,30}$/";
@@ -49,8 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $error['pswd'] = 1;
       }
 
+      // Занесение пользователя в базу данных
       if (!in_array(1, $error)) {
-
+         
          $logpas = [
             "email" => $data["email"]
          ];
@@ -62,9 +62,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $pdo->disconnect();
          } else {
             $data["pswd"] = sha1($data["pswd"]);
-            $pdo->insert("user", $data);
+            $result = $pdo->insert("user", $data, ["user_id"]);
+            $user = [
+               "user_id" => $result["user_id"],
+               "role_id" => 1
+            ];
+            $pdo->insert("user_roles", $user);
             $pdo->disconnect();
-            header("Location: .");
+            header("Location: ./login.php");
          }
       }
    }
