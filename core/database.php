@@ -31,9 +31,9 @@ class DataBase
             $result = $this->pdo->query($query);
             if ($fetch == true) {
                 if ($fetchOne) {
-                    $array = $result->fetch(\PDO::FETCH_ASSOC);
+                    $array = $result->fetch(PDO::FETCH_ASSOC);
                 } else {
-                    $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                    $array = $result->fetchAll(PDO::FETCH_ASSOC);
                 }
             }
         } catch (Exception $e) {
@@ -61,9 +61,9 @@ class DataBase
             if ($fetch == true) {
                 $array = array();
                 if ($fetchOne) {
-                    $array = $result->fetch(\PDO::FETCH_ASSOC);
+                    $array = $result->fetch(PDO::FETCH_ASSOC);
                 } else {
-                    $array = $result->fetchAll(\PDO::FETCH_ASSOC);
+                    $array = $result->fetchAll(PDO::FETCH_ASSOC);
                 }
             }
         } catch (Exception $e) {
@@ -181,7 +181,7 @@ class DataBase
     {
         $table = (array)$table;
         $result = $this->select($table, ["count(*) as c"], $where);
-        return count($result)  > 0 && $result[0]["c"] > 0;
+        return count($result) == 1 && $result[0]["c"] > 0;
     }
 
     /**
