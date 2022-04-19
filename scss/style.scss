@@ -462,8 +462,11 @@ body {
 }
 
 .exit button:hover {
+   transition: 1s;
    transform: translateZ(-25px) rotateX(-90deg);
 }
+
+
 
 .menu__list {
    margin-left: 41px;
@@ -516,6 +519,11 @@ body {
       padding-right: 110px;
       padding-bottom: 60px;
    }
+   
+   .text-danger {
+      color: red;
+      font-size: 15px;
+   }
 
    .login__title {
       display: flex;
@@ -534,11 +542,14 @@ body {
    }
 
    .login__stage, .register__stage {
-      .input__form {
+      .input{
+         display: flex;
+         flex-direction: column;
          margin-bottom: 32px;
       }
       & input {
          width: 470px;
+         margin-bottom: 5px;
       }
       .input__form {
          padding-top: 16px;
