@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once __DIR__ . "/../handlers/loginhandler.php";
 ?>
 
@@ -33,7 +33,7 @@ require_once __DIR__ . "/../handlers/loginhandler.php";
                      <input type="text" class="input__form" name="name" value="<?php echo $_POST['name'] ?>" id="email" placeholder="Name" required>
                      <?php if ($error['name'] == 1) : ?>
                         <small class="text-danger">* Неверно введено имя пользователя</ы>
-                     <?php endif; ?>
+                        <?php endif; ?>
                   </div>
                   <div class="login__surname input">
                      <input type="text" class="input__form" name="surname" value="<?php echo $_POST['surname'] ?>" id="email" placeholder="Nickname" required>
@@ -44,7 +44,9 @@ require_once __DIR__ . "/../handlers/loginhandler.php";
                   <div class="login__email input">
                      <input type="text" class="input__form" name="email" value="<?php echo $_POST['email'] ?>" id="email" placeholder="Email" required>
                      <?php if ($error['email'] == 1) : ?>
-                        <small class="text-danger">* Неверно введен E-mail</small>
+                        <small class="text-danger">* Неверно введен E-mail!</small>
+                     <?php elseif ($error['exists'] == 1) : ?>
+                        <small class="text-danger">* Данный E-mail уже существует!</small>
                      <?php endif; ?>
                   </div>
                   <div class="login__paswd input">
