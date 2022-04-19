@@ -30,19 +30,25 @@
                </div>
             </form>
             <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
+               <?php if ($_GET['mes'] == 'success') {
+                  $err['success'] = '<div class="alert alert-success">Регистрация прошла успешно!</div>';
+               } ?>
                <div class="register__stage hidden" id="register__stage">
                   <div class="login__name">
                      <input type="text" class="input__form" name="name" value="<?php echo $_POST['name'] ?>" id="email" placeholder="Name" required>
                      <?php echo $err['name'] ?>
                   </div>
                   <div class="login__nickname">
-                     <input type="text" class="input__form" name="nickname" id="email" placeholder="Nickname" required>
+                     <input type="text" class="input__form" name="nickname" value="<?php echo $_POST['nickname'] ?>" id="email" placeholder="Nickname" required>
+                     <?php echo $err['nickname'] ?>
                   </div>
                   <div class="login__email">
-                     <input type="text" class="input__form" name="email" id="email" placeholder="Email" required>
+                     <input type="text" class="input__form" name="email" value="<?php echo $_POST['email'] ?>" id="email" placeholder="Email" required>
+                     <?php echo $err['email'] ?>
                   </div>
                   <div class="login__paswd">
-                     <input type="password" class="input__form" name="pswd" id="pswd" placeholder="Password" required>
+                     <input type="password" class="input__form" name="pswd" value="<?php echo $_POST['pswd'] ?>" id="pswd" placeholder="Password" required>
+                     <?php echo $err['pswd'] ?>
                   </div>
                   <div class="submit__button">
                      <input type="submit" class="btn btn__sbm" name="sumbit" id="sumbit" value="Регистрация">

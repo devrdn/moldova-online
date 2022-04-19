@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    ];
 
    $pattern_name = "/^[A-Z][a-z][А-Я][а-я]{1,15}$/";
+   $pattern_pswd = "/^([0-9a-z]{8,15})$/i";
    $flag = 0;
 
    if ($_POST["sumbit"] == $actions["login"]) {
@@ -36,9 +37,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $err['name'] = '<small class="text-danger">Здесь только русские буквы</small>';
             $flag = 1;
          }
-         if (mb_strlen($name) > 10 || empty($name)) {
-            $err['name'] = '<small class="text-danger">Имя должно быть не больше 10 символов</small>';
+         if (mb_strlen($name) > 15 || empty($name)) {
+            $err['name'] = '<small class="text-danger">Имя должно быть не больше 15 символов</small>';
             $flag = 1;
+         }
+         if (mb_strlen($nickname) > 15 || empty($nickname)) {
+            $err['nickname'] = '<small class="text-danger">Фамилия должна быть не больше 15 символов</small>';
+            $flag = 1;
+         }
+         if (empty($nickname)) {
+            $err['nickname'] = '<small class="text-danger">Поле не может быть пустым</small>';
+            $flag = 1;
+         }
+         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $err['email'] = '<small class="text-danger">Формат Email не верный!</small>';
+            $flag = 1;
+         }
+         if (empty($email)) {
+            $err['email'] = '<small class="text-danger">Поле не может быть пустым</small>';
+            $flag = 1;
+         }
+         if (preg_match($pattern_pswd, $pswd)) {
+            $err['pswd'] = '<small class="text-danger">Пароль должен состоять из загланых и строчных букв, а также цифр</small>';
+            $flag = 1;
+         }
+         if (mb_strlen($pswd) < 8 || empty($pswd)) {
+            $err['pswd'] = '<small class="text-danger">Пароль должен содержать от 8 до 15 символос</small>';
+            $flag = 1;
+         }
+         if ($flag == 0) {
+            Header("Location:" . . "?mes=success"); //тут надо сделать 
          }
       }
    }
