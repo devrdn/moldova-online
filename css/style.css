@@ -555,6 +555,8 @@ body {
 }
 
 .exit button:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
   -webkit-transform: translateZ(-25px) rotateX(-90deg);
           transform: translateZ(-25px) rotateX(-90deg);
 }
@@ -615,6 +617,11 @@ body {
   padding-bottom: 60px;
 }
 
+.content .text-danger {
+  color: red;
+  font-size: 15px;
+}
+
 .content .login__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,12 +642,20 @@ body {
   margin-left: 61px;
 }
 
-.content .login__stage .input__form, .content .register__stage .input__form {
+.content .login__stage .input, .content .register__stage .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 32px;
 }
 
 .content .login__stage input, .content .register__stage input {
   width: 470px;
+  margin-bottom: 5px;
 }
 
 .content .login__stage .input__form, .content .register__stage .input__form {

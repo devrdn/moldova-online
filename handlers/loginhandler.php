@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    $data = [
       "name" => verifyData($_POST["name"]),
-      "nickname" => verifyData($_POST["nickname"]),
+      "surname" => verifyData($_POST["nickname"]),
       "email" => verifyData($_POST["email"]),
       "pswd" => verifyData($_POST["pswd"])
    ];
 
    $error = [
       "name" => 0,
-      "nickname" => 0,
+      "surname" => 0,
       "email" => 0,
       "pswd" => 0
    ];
@@ -29,11 +29,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    if ($_POST["sumbit"] == $actions["login"]) {
       if ($data["name"] == 0) {
-         
       }
    } else if ($_POST["sumbit"] == $actions["reg"]) {
-      if ($data["name"] == 0) {
+      $pattern_name = "/^[A-Za-zА-Яа-я]{3,15}$/";
+      $pattern_pswd = "/^[0-9A-Za-z$;%]{8,30}$/";
 
+      if (preg_match($pattern_name, $data['name']) && mb_strlen($data['name']) > 15 && !empty($data['name'])) {
+         $error['name'] = 1;
       }
+      if (preg_match($pattern_name, $data['surname']) && !empty ($data['surname'])) {
+         $error['surname'] = 1;
+      }
+      if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL) && !empty($data['email'])) {
+         $error['email'] = 1;
+      }
+      if (preg_match($pattern_pswd, $data['pswd']) && !empty($pswd)) {
+         $error['pswd'] = 1;
+      }
+
    }
 }
