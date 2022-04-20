@@ -1,5 +1,34 @@
 <div class="admin__container">
     <div class="admin__area">Hello
+        <div class="admin__news">
+            <section class="wrapper">
+                <!-- Row title -->
+                <main class="row title">
+                    <ul>
+                        <li>Название</li>
+                        <li>Автор</li>
+                        <li><img class="admin__icon icon-home" src="../content/comment.svg" alt=""></li>
+                        <li>Дата публикации</li>
+                    </ul>
+                </main>
+                <!-- Row 1 - fadeIn -->
+                <section class="row-fadeIn-wrapper">
+                    <article class="row fadeIn nfl">
+                        <ul>
+                            <li>Title</li>
+                            <li>-----</li>
+                            <li>-----</li>
+                            <li>-----</li>
+                        </ul>
+                        <ul class="more-content">
+                            <li><a href="#">Изменить</a>|<a class="right" href="#">Удалить</a>|<a class="right" href="#">Просмотреть</a></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </article>
+                </section>
+
+        </div>
     </div>
     <nav class="admin-main__menu">
         <ul>

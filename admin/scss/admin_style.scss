@@ -118,7 +118,7 @@ body {
     overflow:hidden;
     -webkit-transition:width .05s linear;
     transition:width .05s linear;
-    -webkit-transform:translateZ(0) scale(1,1);
+    transform:translateZ(0) scale(1,1);
     z-index:1000;
 }
     
@@ -141,7 +141,7 @@ body {
      font-family: arial;
     font-size: 14px;
     text-decoration:none;
-    -webkit-transform:translateZ(0) scale(1,1);
+    transform:translateZ(0) scale(1,1);
     -webkit-transition:all .1s linear;
     transition:all .1s linear;
 }
@@ -198,7 +198,151 @@ nav ul,nav li {
     margin-left: 100px;
     margin-top: 11.54px;
     margin-bottom: 11.54px;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 //News Edit
+.news__block{
+    display: grid;
+    legend{
+        display:inline-flex;
+        align-items: center;
+    }
+}
+
+.news__title, .news__author, .news__categories, .news__tags, .news__comments{
+    margin-right: 160px;
+}
+
+$text:rgba(255,255,255,0.9);
+
+.admin__news{
+    .nfl a {text-decoration:none;transition: color 0.2s ease-out; padding-right: 10px;
+        .right{
+          margin-right:5px;
+        }}
+      .nfl a {color:white;}
+      .nfl a:hover {color:darken(white, 20%);}
+      
+      
+      /* wrapper */
+      .wrapper {
+        width:100%;
+        max-width:1000px;
+        margin:20px auto 100px auto;
+        padding:0;
+        background:white;
+        color:black;
+        overflow:hidden;
+        position:relative;
+      }
+      
+      /* lists */
+      .row ul {
+        margin:0;
+        padding:0;
+      }
+      .row ul li  {
+        margin:0;
+        font-size:16px;
+        font-weight:normal;
+        list-style:none;
+        display:inline-block;
+        width:20%;
+          box-sizing:border-box;
+        @media only screen and (max-width:767px) and (min-width:480px) {
+          font-size:13px;
+        }
+        @media only screen and (max-width:479px) {
+          font-size:13px;
+        }
+      }
+      
+      .row ul li {
+        padding:5px 10px;
+      }
+      
+      /* rows */
+      .row {
+        padding:20px 0;
+        height:30px;
+        font-size:0;
+        position:relative;
+        overflow:hidden;
+        transition:all 0.2s ease-out;
+        border-top:1px solid darken(white, 100%);
+      }
+      .row:hover {
+        background-color:lighten(#716e99, 10%);
+        height:65px;
+      }
+      .title {
+        padding:25px 0 5px 0;
+        height:45px;
+        font-size:0;
+        background-color:white;
+      }
+      .title:hover {
+        background-color:white;
+        height:45px;
+      }
+      
+      .nfl {border-left:3px solid darken($blue, 30%);}
+      .nfl:hover {border-left:3px solid $blue;}
+      
+      
+      /* row one - fadeIn */
+      .row-fadeIn-wrapper {
+        opacity:0;
+        font-size:0;
+        height:0;
+        overflow:hidden;
+        position:relative;
+        transition:all 0.2s ease-out;
+        animation:fadeIn 0.4s ease-out 2s 1 alternate;
+        animation-fill-mode:forwards;
+      }
+      .row-fadeIn-wrapper:hover {
+        height:35px;
+        @media only screen and (max-width : 767px) {
+          height:85px;
+        }
+        @media only screen and (max-width : 359px) {
+          height:105px;
+        }
+      }
+      
+      .fadeIn {
+        padding:20px 0;
+        font-size:0;
+        position:absolute;
+        transition:all 0.2s ease-out;
+        width:100%;
+      }
+      .fadeIn:hover {
+        background-color:lighten(#716e99, 10%);
+        color:white;
+      }
+      
+      /* more content */
+      ul.more-content li {
+        position:relative;
+        top:22px;
+        font-size:13px;
+        margin:0;
+        padding:10px 13px;
+        display:block;
+        height:50px;
+        width:100%;
+        color:darken($text,50%);
+        @media only screen and (max-width:767px) {
+          font-size:11px;
+        }
+      }
+      
+      /* keyframe animations */
+      @keyframes fadeIn {
+        from {background:$light-bg;opacity:0;padding:0;}
+        to {background:darken($light-bg,80%);opacity:1;padding:0 0 65px 0;}
+      }
+}
