@@ -3,7 +3,8 @@
 $menu-color: white;
 $primary-color: #f3f4ff;
 $secondary-color: #3f3d56;
-$font: "Roboto", sans-serif;
+$font: "Roboto",
+sans-serif;
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
@@ -16,19 +17,19 @@ $screen-xl-min: 1200px;
 }
 
 @mixin md {
-   @media only screen  and (max-width: #{$screen-md-min}) {
+   @media only screen and (max-width: #{$screen-md-min}) {
       @content;
    }
 }
 
 @mixin lg {
-   @media only screen  and (max-width: #{$screen-lg-min}) {
+   @media only screen and (max-width: #{$screen-lg-min}) {
       @content;
    }
 }
 
 @mixin xl {
-   @media only screen  and (max-width: #{$screen-xl-min}) {
+   @media only screen and (max-width: #{$screen-xl-min}) {
       @content;
    }
 }
@@ -83,15 +84,18 @@ body {
       display: inline-flex;
       list-style-type: none;
    }
+
    .menu__item {
       padding-left: 68px;
    }
 }
+
 .nav__login {
    background-color: $secondary-color;
    padding: 7px 20px 7px 20px;
    color: $menu-color;
    border-radius: 21px;
+
    a {
       color: #fff;
    }
@@ -102,19 +106,23 @@ body {
    margin: 0 auto;
    margin-top: 250px;
    color: $secondary-color;
+
    .hero {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin-left: 20px;
       margin-right: 20px;
+
       @include sm {
          display: block;
       }
+
       .title {
          display: flex;
          flex-direction: column;
          justify-content: center;
+
          .title__name {
             color: #f3f4ff;
             font-size: 40px;
@@ -123,23 +131,28 @@ body {
                -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56,
                1px 1px 0 #3f3d56;
             line-height: 0;
+
             @include sm {
                font-size: 80px;
             }
          }
+
          .subtitle__name {
             font-weight: 700;
             font-size: 25px;
             line-height: 2px;
+
             @include sm {
                font-size: 40px;
             }
          }
+
          @include sm {
             display: flex;
             text-align: center;
          }
       }
+
       .title__image {
          @include sm {
             visibility: hidden;
@@ -153,6 +166,7 @@ body {
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 119px;
       grid-row-gap: 32px;
+
       @include sm {
          width: 1200px;
          margin: 0 auto;
@@ -174,6 +188,7 @@ body {
       align-items: center;
       font-weight: 600;
       font-size: 21px;
+
       span {
          margin-top: 36px;
       }
@@ -184,6 +199,7 @@ body {
       text-align: center;
       font-weight: 700;
       font-size: 40px;
+
       @include sm {
          margin-top: 70px;
       }
@@ -192,6 +208,7 @@ body {
    .latets__news {
       margin-top: 100px;
    }
+
    .section__title {
       margin-bottom: 30px;
    }
@@ -201,6 +218,7 @@ body {
       height: 187px;
       border-radius: 31px;
       justify-content: center;
+
       img {
          border-radius: 30px;
       }
@@ -218,10 +236,12 @@ body {
       display: flex;
       flex-direction: column;
       padding: 10px;
+
       .post__title {
          text-align: left;
          margin-top: 8px;
       }
+
       .post__content {
          text-align: left;
          margin-top: 5px;
@@ -238,6 +258,7 @@ body {
          line-clamp: 3;
          box-orient: vertical;
       }
+
       .read-more {
          text-align: left;
          font-style: normal;
@@ -254,10 +275,12 @@ body {
    margin-top: 54px;
    background-color: $secondary-color;
    min-width: 1272px;
+
    .footer__info {
       display: flex;
       justify-content: space-around;
       align-items: center;
+
       .footer__menu {
          display: flex;
          align-items: center;
@@ -265,19 +288,22 @@ body {
          li:not(:last-child) {
             margin-bottom: 12px;
          }
+
          li {
             list-style: none;
          }
+
          a {
             color: white;
          }
       }
-      
+
       .social__icons {
          display: grid;
          grid-template-columns: repeat(2, 1fr);
          column-gap: 40px;
          row-gap: 42px;
+
          .fa {
             background: #fff;
             color: $secondary-color;
@@ -374,7 +400,7 @@ body {
 }
 
 /* Checked */
-.sex__block .persdata__answer input[type="radio"]:checked + label {
+.sex__block .persdata__answer input[type="radio"]:checked+label {
    background: $secondary-color;
    color: $menu-color;
 }
@@ -439,7 +465,7 @@ body {
 
 
 
-.exit button{
+.exit button {
    appearance: none;
    background-color: $menu-color;
    border-width: 0;
@@ -457,9 +483,11 @@ body {
    border: 1px solid #f3f4ff;
    border-radius: 5px;
 }
+
 .exit button:before {
    transform: rotateY(0deg) translateZ(25px);
 }
+
 .exit button:after {
    color: $menu-color;
    background-color: $secondary-color;
@@ -517,6 +545,12 @@ body {
    font-size: 15px;
 }
 
+textarea {
+   resize: none;
+   min-height: 50px;
+   height: 100px;
+   max-height: 150px;
+}
 
 .content {
    display: flex;
@@ -531,13 +565,14 @@ body {
       padding-right: 110px;
       padding-bottom: 60px;
    }
-   
+
 
    .login__title {
       display: flex;
       font-size: 20px;
       justify-content: space-around;
       margin-bottom: 28px;
+
       button {
          background: none;
          border: none;
@@ -549,16 +584,19 @@ body {
       margin-left: 61px;
    }
 
-   .login__stage, .register__stage {
-      .input{
+   .login__stage,
+   .register__stage {
+      .input {
          display: flex;
          flex-direction: column;
          margin-bottom: 32px;
       }
+
       & input {
          width: 470px;
          margin-bottom: 5px;
       }
+
       .input__form {
          padding-top: 16px;
          padding-bottom: 16px;
@@ -571,6 +609,7 @@ body {
 
       .submit__button {
          text-align: center;
+
          .btn__sbm {
             padding-bottom: 15px;
             padding-top: 15px;
@@ -578,6 +617,7 @@ body {
             background-color: $secondary-color;
             color: white;
             border: none;
+
             &:hover {
                transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.45);
                background-color: #514e6e;
@@ -602,6 +642,7 @@ body {
    margin-top: 10px;
    text-align: justify;
 }
+
 // Цвета
 
 .black-clr {
