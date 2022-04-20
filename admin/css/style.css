@@ -116,7 +116,10 @@ body {
 .container .hero .title .title__name {
   color: #f3f4ff;
   font-size: 40px;
-  text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56, 1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56;
+  text-shadow: -0 -1px 0 #3f3d56, 0 -1px 0 #3f3d56, -0 1px 0 #3f3d56, 0 1px 0 #3f3d56, -1px -0 0 #3f3d56,
+ 1px -0 0 #3f3d56, -1px 0 0 #3f3d56, 1px 0 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56,
+ -1px 1px 0 #3f3d56, 1px 1px 0 #3f3d56, -1px -1px 0 #3f3d56, 1px -1px 0 #3f3d56, -1px 1px 0 #3f3d56,
+ 1px 1px 0 #3f3d56;
   line-height: 0;
 }
 
@@ -176,25 +179,6 @@ body {
   grid-column-gap: 33px;
 }
 
-.container .info__box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: white;
-  border-radius: 50px;
-  padding: 35px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: 600;
-  font-size: 21px;
-}
 
 .container .info__box span {
   margin-top: 36px;
@@ -230,19 +214,16 @@ body {
           justify-content: center;
 }
 
+
 .container .post__image img {
   border-radius: 30px;
 }
 
+
 .container .box__news {
   padding: 10px;
   border-radius: 31px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+
 }
 
 .container .post__info {
@@ -504,9 +485,6 @@ body {
   transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
 }
 
-.persdata__button {
-  padding-bottom: 30px;
-}
 
 .persdata__button input:hover {
   -webkit-transition: 0.2s cubic-bezier(0.24, 1.23, 0.35, 0.44);
@@ -567,12 +545,7 @@ body {
           transform: rotateX(90deg) translateZ(25px);
 }
 
-.exit button:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transform: translateZ(-25px) rotateX(-90deg);
-          transform: translateZ(-25px) rotateX(-90deg);
-}
+
 
 .menu__list {
   margin-left: 41px;
@@ -655,21 +628,7 @@ body {
   margin-left: 61px;
 }
 
-.content .login__stage .input, .content .register__stage .input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 32px;
-}
 
-.content .login__stage input, .content .register__stage input {
-  width: 470px;
-  margin-bottom: 5px;
-}
 
 .content .login__stage .input__form, .content .register__stage .input__form {
   padding-top: 16px;
@@ -713,4 +672,4 @@ body {
   overflow: hidden;
   display: none;
   visibility: hidden;
-}
+

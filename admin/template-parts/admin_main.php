@@ -27,7 +27,6 @@
                         </ul>
                     </article>
                 </section>
-
                 <section class="row-fadeIn-wrapper">
                     <article class="row fadeIn nfl">
                         <ul>
@@ -43,7 +42,6 @@
                         </ul>
                     </article>
                 </section>
-
         </div>
     </div>
     <nav class="admin-main__menu">
