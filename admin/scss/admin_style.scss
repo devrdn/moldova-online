@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+$menu-color: white;
+$primary-color: #f3f4ff;
+$secondary-color: #3f3d56;
+$font: "Roboto", sans-serif;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm {
+   @media only screen and (max-width: #{$screen-sm-min}) {
+      @content;
+   }
+}
+
+@mixin md {
+   @media only screen  and (max-width: #{$screen-md-min}) {
+      @content;
+   }
+}
+
+@mixin lg {
+   @media only screen  and (max-width: #{$screen-lg-min}) {
+      @content;
+   }
+}
+
+@mixin xl {
+   @media only screen  and (max-width: #{$screen-xl-min}) {
+      @content;
+   }
+}
+
+@mixin rwd($screen) {
+   @media (max-width: $screen) {
+      @content;
+   }
+}
+
+@include rwd(1850px) {
+    .admin-header-container {
+       padding-right: 50px !important;
+       padding-left: 50px !important;
+    }
+ }
+
+body {
+   background-color: $primary-color;
+   font-family: $font;
+}
+.admin-header-container{
+    background-color: $menu-color;
+    padding-right: 315px;
+    padding-left: 315px;
+    padding-top: 11.54px;
+    padding-bottom: 11.54px;
+    margin: 0 auto;
+    min-width: 1290px;
+}
+
+.admin-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+ 
+.admin-header__nav {
+    display: inline-flex;
+}
+
+.admin__nav {
+    ul {
+       display: inline-flex;
+       list-style-type: none;
+    }
+    .nav__item {
+       font-size: 12px;
+       padding-right: 10px;
+    }
+}
+
+.admin-nav__login{
+     img{
+        width: 20px;
+        height: 20px;
+     }
+}
+
+//Main
+.admin__icon {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    color: $menu-color;
+}
+
+.admin-main__menu:hover,nav.admin-main__menu.expanded {
+    width:250px;
+    overflow:visible;
+}
+    
+.admin-main__menu {
+    background:$secondary-color;
+    border-right:1px solid #e5e5e5;
+    position:absolute;
+    top:0;
+    bottom:0;
+    height:100%;
+    left:0;
+    width:60px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    z-index:1000;
+}
+    
+.admin-main__menu>ul {
+    margin:7px 0;
+}
+    
+.admin-main__menu li {
+    position:relative;
+    display:block;
+    width:250px;
+}
+    
+.admin-main__menu li>a {
+    position:relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:$menu-color;
+     font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    -webkit-transform:translateZ(0) scale(1,1);
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+}
+    
+.admin-main__menu .nav-text {
+    position:relative;
+    display:table-cell;
+    vertical-align:middle;
+    width:190px;
+}
+    
+.admin-main__menu>ul.logout {
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+    
+.no-touch .scrollable.hover {
+    overflow-y:hidden;
+}
+    
+.no-touch .scrollable.hover:hover {
+    overflow-y:auto;
+    overflow:visible;
+}
+    
+a:hover,a:focus {
+    text-decoration:none;
+}
+    
+nav {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+    
+nav ul,nav li {
+    outline:0;
+    margin:0;
+    padding:0;
+}
+.admin-main__menu li:hover>a,nav.admin-main__menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+    color:#fff;
+    background-color:#716e99;
+}
+
+.admin__area {
+    float: left;
+    background: $primary-color;
+    width: 1290px;
+    margin: 0 auto;
+    margin-left: 100px;
+    margin-top: 11.54px;
+    margin-bottom: 11.54px;
+    margin-right: 100px;
+}
+
+//News Edit
