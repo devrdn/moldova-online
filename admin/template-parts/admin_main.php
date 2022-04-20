@@ -13,7 +13,7 @@
 
             </li>
             <li>
-                <a href="edit_news.php">
+                <a href="edit.php">
                     <i><img class="admin__icon icon-post" src="../content/item_news.svg" alt=""></i>
                     <span class="nav-text">
                         Новости
