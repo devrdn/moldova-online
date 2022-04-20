@@ -168,7 +168,7 @@ class DataBase
         $tval = implode(", ", $tval);
 
         $query = "UPDATE {$table} SET {$tval}  WHERE {$twhere}";
-        return $this->query($query, false);
+        $this->query($query, false);
     }
 
     /**

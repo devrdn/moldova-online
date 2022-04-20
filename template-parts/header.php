@@ -30,7 +30,12 @@
                </nav>
             </div> 
             <div class="nav__login">
-               <span><a href="login.php">Войти / Зарегистрироваться</a></span>
+               <?php 
+               if (isset($_SESSION["user"])) : ?>
+                  <span><a href="cabinet.php">Личный кабинет: <?php echo $_SESSION["user"]["name"]. " ".$_SESSION["user"]["surname"]; ?></a></span>
+               <? else : ?>
+                  <span><a href="login.php">Войти / Зарегистрироваться</a></span>
+               <? endif; ?>
             </div>
          </div>
       </div>

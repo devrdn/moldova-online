@@ -1,7 +1,3 @@
-<?php
-require_once __DIR__ . "/../handlers/loginhandler.php";
-?>
-
 <div class="container container-login">
    <div class="content">
       <div class="login">
@@ -38,7 +34,7 @@ require_once __DIR__ . "/../handlers/loginhandler.php";
                   <div class="login__surname input">
                      <input type="text" class="input__form" name="surname" value="<?php echo $_POST['surname'] ?>" id="email" placeholder="Nickname" required>
                      <?php if ($error['surname'] == 1) : ?>
-                        <small class="text-danger">* Фамилия должна быть не больше 15 символов</small>
+                        <small class="text-danger">* Неверна введена фамилия</small>
                      <?php endif; ?>
                   </div>
                   <div class="login__email input">
