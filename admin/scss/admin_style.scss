@@ -293,7 +293,7 @@ $text:rgba(255,255,255,0.9);
       
       /* row one - fadeIn */
       .row-fadeIn-wrapper {
-        opacity:0;
+        opacity: 0;
         font-size:0;
         height:0;
         overflow:hidden;
@@ -343,6 +343,6 @@ $text:rgba(255,255,255,0.9);
       /* keyframe animations */
       @keyframes fadeIn {
         from {background:white;opacity:0;padding:0;}
-        to {background:darken($light-bg,80%);opacity:1;padding:0 0 65px 0;}
+        to {background:white;opacity:1;padding:0 0 65px 0;}
       }
 }
