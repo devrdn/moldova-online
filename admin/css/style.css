@@ -186,12 +186,13 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: white;
-  border-radius: 50px;
-  padding: 35px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: white;
+  border-radius: 50px;
+  padding: 35px;
+  align-items: center;
   font-weight: 600;
   font-size: 21px;
 }
@@ -230,19 +231,9 @@ body {
           justify-content: center;
 }
 
-.container .post__image img {
-  border-radius: 30px;
-}
-
 .container .box__news {
   padding: 10px;
   border-radius: 31px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .container .post__info {
@@ -359,10 +350,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   background-color: white;
   border-radius: 45px;
   margin-left: 30px;
@@ -505,7 +492,7 @@ body {
 }
 
 .persdata__button {
-  padding-bottom: 30px;
+  padding-bottom: 72px;
 }
 
 .persdata__button input:hover {
@@ -568,8 +555,6 @@ body {
 }
 
 .exit button:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
   -webkit-transform: translateZ(-25px) rotateX(-90deg);
           transform: translateZ(-25px) rotateX(-90deg);
 }
@@ -608,11 +593,6 @@ body {
 
 .container-login {
   margin-top: 30px;
-}
-
-.text-danger {
-  color: red;
-  font-size: 15px;
 }
 
 .content {
@@ -655,20 +635,12 @@ body {
   margin-left: 61px;
 }
 
-.content .login__stage .input, .content .register__stage .input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.content .login__stage .input__form, .content .register__stage .input__form {
   margin-bottom: 32px;
 }
 
 .content .login__stage input, .content .register__stage input {
   width: 470px;
-  margin-bottom: 5px;
 }
 
 .content .login__stage .input__form, .content .register__stage .input__form {
