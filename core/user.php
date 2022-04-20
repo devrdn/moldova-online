@@ -15,6 +15,7 @@ class User {
         if ($perm) {
             $_SESSION["permission"] = self::getPermission($data["user_id"]);
         }
+        unset($_SESSION["pswd"]);
     }
 
     public static function getPermission(int $id) : array {
@@ -28,4 +29,5 @@ class User {
     public static function getUserId() : int {
         return $_SESSION["user"]["user_id"];
     }
+    
 }

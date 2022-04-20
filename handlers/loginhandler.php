@@ -27,6 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "exists" => 0
    ];
 
+   $errormsg = [
+      "name" => "* Неверно введено имя пользователя",
+      "surname" => "* Неверна введена фамилия пользователя",
+      "email" => "* Неверно введен e-mail пользователя",
+      "phone" => "* Телефон должен быть верного формата eg. (+373 68 00 33 13)",
+      "exists" => "* Данная почта уже зарегестрирована",
+      "equals" => "* Вы не изменили личные данные"
+   ];
+
    $actions = [
       "login" => "Войти",
       "reg" => "Регистрация",
@@ -44,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // проверка входа
    if ($_POST["sumbit"] == $actions["login"]) {
       unset($data["name"], $data["surname"], $data["phone"], $data["sex"]);
-      $pdo = new DataBase;
+      $pdo = new DataBase;    
       $data["pswd"] = sha1($data["pswd"]);
       if ($pdo->exists("user", $data)) {
          $result = $pdo->select($main_table, $all_data, $data, [], true);
@@ -56,19 +65,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $error["exists"] = 1;
       // проверка авторизации
    } else if ($_POST["sumbit"] == $actions["reg"]) {
-      $pattern_name = "/^[A-Za-zА-Яа-я]{3,15}$/";
+      $pattern_name = "/^[A-Z][a-z]{3,15}$/";
       $pattern_pswd = "/^[0-9A-Za-z$;%]{8,30}$/";
 
-      if (!preg_match($pattern_name, $data['name']) && mb_strlen($data['name']) > 15 && !empty($data['name'])) {
+      if (!preg_match($pattern_name, $data['name']) || empty($data['name'])) {
          $error['name'] = 1;
       }
-      if (!preg_match($pattern_name, $data['surname']) && !empty($data['surname'])) {
+      if (!preg_match($pattern_name, $data['surname']) || empty($data['surname'])) {
          $error['surname'] = 1;
       }
-      if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL) && !empty($data['email'])) {
+      if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL) || empty($data['email'])) {
          $error['email'] = 1;
       }
-      if (!preg_match($pattern_pswd, $data['pswd']) && !empty($pswd)) {
+      if (!preg_match($pattern_pswd, $data['pswd']) || empty($pswd)) {
          $error['pswd'] = 1;
       }
 
@@ -99,59 +108,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       // проверка изменения профиля
    } else if ($_POST["submit"] == $actions["edit"]) {
-      $pattern_name = "/^[A-Za-zА-Яа-я]{3,15}$/";
+      $pattern_name = "/^[A-Z][a-z]{3,15}$/";
       $pattern_pswd = "/^[0-9A-Za-z$;%]{8,30}$/";
-      //unset($data["pswd"]);
-      if (!preg_match($pattern_name, $data['name']) && mb_strlen($data['name']) > 15 && !empty($data['name'])) {
+      $pattern_phone = "/^[+]?(373)?[0]?[67](0|8|7|9)\d{6}$/";
+      if (!preg_match($pattern_name, $data['name']) || empty($data['name'])) {
          $error['name'] = 1;
       }
-      if (!preg_match($pattern_name, $data['surname']) && !empty($data['surname'])) {
+      if (!preg_match($pattern_name, $data['surname'])  || empty($data['surname'])) {
          $error['surname'] = 1;
       }
-      if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL) && !empty($data['email'])) {
+      if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)  || empty($data['email'])) {
          $error['email'] = 1;
       }
-      if ($data == $SESSION["user"]) {
-         $error['equals'] = 1;
-         echo "f";
-         exit();
-      } else {
-         exit();
+
+      if (!preg_match($pattern_phone, $data['phone']) || empty($data['phone'])) {
+         $error['phone'] = 1;
       }
+
       if (!in_array(1, $error)) {
+
+         unset($data["pswd"]);
          $pdo = new DataBase;
+
+         foreach (array_keys($data) as $key) {
+            if ($data[$key] == $_SESSION["user"][$key]) {
+               unset($data[$key]);
+            }
+         }
 
          $exists = [
             "email" => $data["email"]
          ];
 
-
-         if ($pdo->exists("user", $exists)) {
-             
-
-            foreach(array_keys($data) as $key) {
-              if($data[$key] == $_SESSION["user"][$key]) {
-                 unset($data[$key]);
-              }
-            }
-
-            pre_dump($data);
-
-            $pdo->update("user", $data, ["user_id" => $_SESSION["user"]["user_id"]]);
-            
-            $where = [
-               "user_id" => user::getUserId()
-            ];
-
-            $result = $pdo->select($main_table, $all_data, $where,  [], true);
-
-            user::setSession($result, false);
-
-            $pdo->disconnect();
-
-            header("Location: .");
+         if (isset($data["email"]) && $pdo->exists("user", $exists)) {
+               $error['exists'] = 1;
          } else {
-            $error["exists"] = 1;
+            if (count($data) == 0) {
+               $error["equals"] = 1;
+               $pdo->disconnect();
+            } else {
+               $pdo->update("user", $data, ["user_id" => $_SESSION["user"]["user_id"]]);
+               $where = [
+                  "user_id" => user::getUserId()
+               ];
+               $result = $pdo->select($main_table, $all_data, $where,  [], true);
+               user::setSession($result, false);
+               $pdo->disconnect();
+               header("Location: ./cabinet.php");
+            }
          }
       }
    }
