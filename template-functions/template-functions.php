@@ -45,7 +45,7 @@ function getSex($param)
 function thePost()
 {
    $pdo = new DataBase;
-   $result = $pdo->select(["posts"], ["*"], [], ['offset' => 0, 'limit' => 3]);
+   $result = $pdo->query("SELECT * FROM (SELECT * FROM posts ORDER BY id DESC LIMIT 3) AS T ORDER BY id ASC", true);
 
    foreach ($result as $param) : ?>
       <div class="info__box box__news post-<?=$param["id"]; ?>">
@@ -76,6 +76,16 @@ function getPost(int $id) {
    ];
    $pdo = new DataBase;
    $result= $pdo->select(["posts"], ["*"], $post_id, [], true);
+   $pdo->disconnect();
+   return $result;
+}
+
+function postExist(int $id) {
+   $post_id = [
+      "id" => verifyData($id),
+   ];
+   $pdo = new DataBase;
+   $result = $pdo->exists("posts", $post_id);
    $pdo->disconnect();
    return $result;
 }

@@ -28,6 +28,22 @@
                     </article>
                 </section>
 
+                <section class="row-fadeIn-wrapper">
+                    <article class="row fadeIn nfl">
+                        <ul>
+                            <li>Title</li>
+                            <li>-----</li>
+                            <li>-----</li>
+                            <li>-----</li>
+                        </ul>
+                        <ul class="more-content">
+                            <li><a href="#">Изменить</a>|<a class="right" href="#">Удалить</a>|<a class="right" href="#">Просмотреть</a></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </article>
+                </section>
+
         </div>
     </div>
     <nav class="admin-main__menu">
