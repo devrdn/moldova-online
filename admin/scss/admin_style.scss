@@ -287,8 +287,8 @@ $text:rgba(255,255,255,0.9);
         height:45px;
       }
       
-      .nfl {border-left:3px solid darken($blue, 30%);}
-      .nfl:hover {border-left:3px solid $blue;}
+      .nfl {border-left:3px solid darken(white, 30%);}
+      .nfl:hover {border-left:3px solid white;}
       
       
       /* row one - fadeIn */
@@ -342,7 +342,7 @@ $text:rgba(255,255,255,0.9);
       
       /* keyframe animations */
       @keyframes fadeIn {
-        from {background:$light-bg;opacity:0;padding:0;}
+        from {background:white;opacity:0;padding:0;}
         to {background:darken($light-bg,80%);opacity:1;padding:0 0 65px 0;}
       }
 }
