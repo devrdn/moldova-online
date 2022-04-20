@@ -10,339 +10,213 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
 @mixin sm {
-   @media only screen and (max-width: #{$screen-sm-min}) {
-      @content;
-   }
+  @media only screen and (max-width: #{$screen-sm-min}) {
+    @content;
+  }
 }
 
 @mixin md {
-   @media only screen  and (max-width: #{$screen-md-min}) {
-      @content;
-   }
+  @media only screen  and (max-width: #{$screen-md-min}) {
+    @content;
+  }
 }
 
 @mixin lg {
-   @media only screen  and (max-width: #{$screen-lg-min}) {
-      @content;
-   }
+  @media only screen  and (max-width: #{$screen-lg-min}) {
+    @content;
+  }
 }
 
 @mixin xl {
-   @media only screen  and (max-width: #{$screen-xl-min}) {
-      @content;
-   }
+  @media only screen  and (max-width: #{$screen-xl-min}) {
+    @content;
+  }
 }
 
 @mixin rwd($screen) {
-   @media (max-width: $screen) {
-      @content;
-   }
+  @media (max-width: $screen) {
+    @content;
+  }
 }
 
 @include rwd(1850px) {
-    .admin-header-container {
-       padding-right: 50px !important;
-       padding-left: 50px !important;
-    }
- }
+  .admin-header-container {
+    padding-right: 50px !important;
+    padding-left: 50px !important;
+  }
+}
 
 body {
-   background-color: $primary-color;
-   font-family: $font;
+  background-color: $primary-color;
+  font-family: $font;
 }
-.admin-header-container{
-    background-color: $menu-color;
-    padding-right: 315px;
-    padding-left: 315px;
-    padding-top: 11.54px;
-    padding-bottom: 11.54px;
-    margin: 0 auto;
-    min-width: 1290px;
+.admin-header-container {
+  background-color: $menu-color;
+  padding-right: 315px;
+  padding-left: 315px;
+  padding-top: 11.54px;
+  padding-bottom: 11.54px;
+  margin: 0 auto;
+  min-width: 1290px;
 }
 
 .admin-header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
- 
+
 .admin-header__nav {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .admin__nav {
-    ul {
-       display: inline-flex;
-       list-style-type: none;
-    }
-    .nav__item {
-       font-size: 12px;
-       padding-right: 10px;
-    }
+  ul {
+    display: inline-flex;
+    list-style-type: none;
+  }
+  .nav__item {
+    font-size: 12px;
+    padding-right: 10px;
+  }
 }
 
-.admin-nav__login{
-     img{
-        width: 20px;
-        height: 20px;
-     }
+.admin-nav__login {
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 //Main
 .admin__icon {
-    position: relative;
-    display: table-cell;
-    width: 60px;
-    height: 25px;
-    text-align: center;
-    vertical-align: middle;
-    font-size:20px;
-    color: $menu-color;
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  color: $menu-color;
 }
 
-.admin-main__menu:hover,nav.admin-main__menu.expanded {
-    width:250px;
-    overflow:visible;
+.admin-main__menu:hover,
+nav.admin-main__menu.expanded {
+  width: 250px;
+  overflow: visible;
 }
-    
+
 .admin-main__menu {
-    background:$secondary-color;
-    border-right:1px solid #e5e5e5;
-    position:absolute;
-    top:0;
-    bottom:0;
-    height:100%;
-    left:0;
-    width:60px;
-    overflow:hidden;
-    -webkit-transition:width .05s linear;
-    transition:width .05s linear;
-    transform:translateZ(0) scale(1,1);
-    z-index:1000;
+  background: $secondary-color;
+  border-right: 1px solid #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  width: 60px;
+  overflow: hidden;
+  -webkit-transition: width 0.05s linear;
+  transition: width 0.05s linear;
+  transform: translateZ(0) scale(1, 1);
+  z-index: 1000;
 }
-    
-.admin-main__menu>ul {
-    margin:7px 0;
+
+.admin-main__menu > ul {
+  margin: 7px 0;
 }
-    
+
 .admin-main__menu li {
-    position:relative;
-    display:block;
-    width:250px;
+  position: relative;
+  display: block;
+  width: 250px;
 }
-    
-.admin-main__menu li>a {
-    position:relative;
-    display:table;
-    border-collapse:collapse;
-    border-spacing:0;
-    color:$menu-color;
-     font-family: arial;
-    font-size: 14px;
-    text-decoration:none;
-    transform:translateZ(0) scale(1,1);
-    -webkit-transition:all .1s linear;
-    transition:all .1s linear;
+
+.admin-main__menu li > a {
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: $menu-color;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateZ(0) scale(1, 1);
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
-    
+
 .admin-main__menu .nav-text {
-    position:relative;
-    display:table-cell;
-    vertical-align:middle;
-    width:190px;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  width: 190px;
 }
-    
-.admin-main__menu>ul.logout {
-    position:absolute;
-    left:0;
-    bottom:0;
+
+.admin-main__menu > ul.logout {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
-    
+
 .no-touch .scrollable.hover {
-    overflow-y:hidden;
+  overflow-y: hidden;
 }
-    
+
 .no-touch .scrollable.hover:hover {
-    overflow-y:auto;
-    overflow:visible;
+  overflow-y: auto;
+  overflow: visible;
 }
-    
-a:hover,a:focus {
-    text-decoration:none;
+
+a:hover,
+a:focus {
+  text-decoration: none;
 }
-    
+
 nav {
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    -o-user-select:none;
-    user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
-    
-nav ul,nav li {
-    outline:0;
-    margin:0;
-    padding:0;
+
+nav ul,
+nav li {
+  outline: 0;
+  margin: 0;
+  padding: 0;
 }
-.admin-main__menu li:hover>a,nav.admin-main__menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
-    color:#fff;
-    background-color:#716e99;
+.admin-main__menu li:hover > a,
+nav.admin-main__menu li.active > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+.dashboard-page nav.dashboard-menu ul li.active a {
+  color: #fff;
+  background-color: #716e99;
 }
 
 .admin__area {
-    float: left;
-    background: $primary-color;
-    width: 1290px;
-    margin: 0 auto;
-    margin-left: 100px;
-    margin-top: 11.54px;
-    margin-bottom: 11.54px;
-    margin-right: 50px;
+  float: left;
+  background: $primary-color;
+  width: 1290px;
+  margin: 0 auto;
+  margin-left: 100px;
+  margin-top: 11.54px;
+  margin-bottom: 11.54px;
+  margin-right: 50px;
 }
 
-//News Edit
-.news__block{
-    display: grid;
-    legend{
-        display:inline-flex;
-        align-items: center;
-    }
-}
+.container {
+  width: 1290px;
+  margin: 0 auto;
 
-.news__title, .news__author, .news__categories, .news__tags, .news__comments{
-    margin-right: 160px;
-}
-
-$text:rgba(255,255,255,0.9);
-
-.admin__news{
-    .nfl a {text-decoration:none;transition: color 0.2s ease-out; padding-right: 10px;
-        .right{
-          margin-right:5px;
-        }}
-      .nfl a {color:white;}
-      .nfl a:hover {color:darken(white, 20%);}
-      
-      
-      /* wrapper */
-      .wrapper {
-        width:100%;
-        max-width:1000px;
-        margin:20px auto 100px auto;
-        padding:0;
-        background:white;
-        color:black;
-        overflow:hidden;
-        position:relative;
-      }
-      
-      /* lists */
-      .row ul {
-        margin:0;
-        padding:0;
-      }
-      .row ul li  {
-        margin:0;
-        font-size:16px;
-        font-weight:normal;
-        list-style:none;
-        display:inline-block;
-        width:20%;
-          box-sizing:border-box;
-        @media only screen and (max-width:767px) and (min-width:480px) {
-          font-size:13px;
-        }
-        @media only screen and (max-width:479px) {
-          font-size:13px;
-        }
-      }
-      
-      .row ul li {
-        padding:5px 10px;
-      }
-      
-      /* rows */
-      .row {
-        padding:20px 0;
-        height:30px;
-        font-size:0;
-        position:relative;
-        overflow:hidden;
-        transition:all 0.2s ease-out;
-        border-top:1px solid darken(white, 100%);
-      }
-      .row:hover {
-        background-color:lighten(#716e99, 10%);
-        height:65px;
-      }
-      .title {
-        padding:25px 0 5px 0;
-        height:45px;
-        font-size:0;
-        background-color:white;
-      }
-      .title:hover {
-        background-color:white;
-        height:45px;
-      }
-      
-      .nfl {border-left:3px solid darken(white, 30%);}
-      .nfl:hover {border-left:3px solid white;}
-      
-      
-      /* row one - fadeIn */
-      .row-fadeIn-wrapper {
-        opacity: 0;
-        font-size:0;
-        height:0;
-        overflow:hidden;
-        position:relative;
-        transition:all 0.2s ease-out;
-        animation:fadeIn 0.4s ease-out 2s 1 alternate;
-        animation-fill-mode:forwards;
-      }
-      .row-fadeIn-wrapper:hover {
-        height:35px;
-        @media only screen and (max-width : 767px) {
-          height:85px;
-        }
-        @media only screen and (max-width : 359px) {
-          height:105px;
-        }
-      }
-      
-      .fadeIn {
-        padding:20px 0;
-        font-size:0;
-        position:absolute;
-        transition:all 0.2s ease-out;
-        width:100%;
-      }
-      .fadeIn:hover {
-        background-color:lighten(#716e99, 10%);
-        color:white;
-      }
-      
-      /* more content */
-      ul.more-content li {
-        position:relative;
-        top:22px;
-        font-size:13px;
-        margin:0;
-        padding:10px 13px;
-        display:block;
-        height:50px;
-        width:100%;
-        color:darken($text,50%);
-        @media only screen and (max-width:767px) {
-          font-size:11px;
-        }
-      }
-      
-      /* keyframe animations */
-      @keyframes fadeIn {
-        from {background:white;opacity:0;padding:0;}
-        to {background:white;opacity:1;padding:0 0 65px 0;}
-      }
+  thead {
+    background-color: #fff;
+  }
 }
