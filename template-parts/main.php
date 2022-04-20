@@ -51,59 +51,9 @@
       </div>
 
       <div class="grid__info news">
-         <div class="info__box box__news">
-            <div class="post__image">
-               <img src="content/post-image.png" alt="">
-            </div>
-            <div class="post__info">
-               <span class="post__title">
-                  Title
-               </span>
-               <div class="post__content">
-                  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                  It was popularised in the 1960s with the release of Letraset sheets containing 
-                  Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-               <div class="read-more">
-                  <span>Читать далее ... </span>
-               </div>
-            </div>
-         </div>
-         <div class="info__box box__news">
-            <div class="post__image">
-               <img src="content/post-image.png" alt="">
-            </div>
-            <div class="post__info">
-               <span class="post__title">
-                  Title
-               </span>
-               <div class="post__content">
-                  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-                  Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-               <div class="read-more">
-                  <span>Читать далее ... </span>
-               </div>
-            </div>
-         </div>
-         <div class="info__box box__news">
-            <div class="post__image">
-               <img src="content/post-image.png" alt="">
-            </div>
-            <div class="post__info">
-               <span class="post__title">
-                  Title
-               </span>
-               <div class="post__content">
-                  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
-                  Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-               <div class="read-more">
-                  <span>Читать далее ... </span>
-               </div>
-            </div>
-         </div>
+         <?php thePost(); ?>
       </div>
+
    </section>
 
 </div>

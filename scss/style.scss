@@ -168,7 +168,6 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      align-items: center;
       background-color: $menu-color;
       border-radius: 50px;
       padding: 35px;
@@ -202,11 +201,17 @@ body {
       height: 187px;
       border-radius: 31px;
       justify-content: center;
+      img {
+         border-radius: 30px;
+      }
+
    }
 
    .box__news {
       padding: 10px;
       border-radius: 31px;
+      display: flex;
+      align-items: flex-start;
    }
 
    .post__info {

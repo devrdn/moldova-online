@@ -1,14 +1,17 @@
-<?php 
+<?php
+
 /**
  * Add Script
  */
-function add_script($script_name) {
-   ?>
-   <script type="text/javascript" src="<?=$script_name?>"></script>
+function add_script($script_name)
+{
+?>
+   <script type="text/javascript" src="<?= $script_name ?>"></script>
    <?
 }
 
-function verifyData($params, $replaceNull = false, $replacement = 0) {
+function verifyData($params, $replaceNull = false, $replacement = 0)
+{
    strip_tags($params);
    htmlspecialchars($params);
    htmlentities($params);
@@ -18,21 +21,61 @@ function verifyData($params, $replaceNull = false, $replacement = 0) {
          $params = (int)$replacement;
       }
    }
-   return $params; 
+   return $params;
 }
 
-function pre_dump($param) {
+function pre_dump($param)
+{
    echo "<pre>";
    echo var_dump($param);
    echo "</pre>";
 }
 
-function getSex($param) {
-   if(empty($param)) {
+function getSex($param)
+{
+   if (empty($param)) {
       return verifyData($param, true);
    } else if ($param == "Мужской") {
       return 1;
    } else {
       return 0;
    }
+}
+
+function thePost()
+{
+   $pdo = new DataBase;
+   $result = $pdo->select(["posts"], ["*"], [], ['offset' => 0, 'limit' => 3]);
+
+   foreach ($result as $param) : ?>
+      <div class="info__box box__news post-<?=$param["id"]; ?>">
+         <div class="post__image">
+            <img width="387px" height="187px" src="<?= $param["post_img"]; ?>" alt="">
+         </div>
+         <div class="post__info">
+            <span class="post__title">
+               <?= $param["post_title"]; ?>
+            </span>
+            <div class="post__content">
+               <?= $param["post_content"]; ?>
+            </div>
+            <div class="read-more">
+               <a href=<?="./post.php?p=".$param["id"]; ?>>Читать далее ... </a>
+            </div>
+         </div>
+      </div>
+
+<? endforeach;
+
+   $pdo->disconnect();
+}
+
+function getPost(int $id) {
+   $post_id = [
+      "id" => verifyData($id),
+   ];
+   $pdo = new DataBase;
+   $result= $pdo->select(["posts"], ["*"], $post_id, [], true);
+   $pdo->disconnect();
+   return $result;
 }
